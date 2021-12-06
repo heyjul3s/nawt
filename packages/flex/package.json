@@ -1,0 +1,18 @@
+{
+  "name": "flex",
+  "version": "0.1.0",
+  "description": "A flexbox version of @artifak/flex. You can also view the docs at [Artifak Flex](https://www.artifak.dev/?content=Flex).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Julian Low <hello@heyjul.es>",
+  "license": "MIT",
+  "devDependencies": {
+    "@testing-library/react": "^12.1.2",
+    "@types/styled-components": "^5.1.15",
+    "@types/styled-system": "^5.1.13",
+    "styled-components": "^5.3.3",
+    "styled-system": "^5.1.5"
+  }
+}

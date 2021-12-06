@@ -1,0 +1,24 @@
+{
+  "name": "styled",
+  "version": "0.1.0",
+  "description": "A small library of Styled Components utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Julian Low <hello@heyjul.es>",
+  "license": "MIT",
+  "peerDependencies": {
+    "styled-components": ">=5.2.1",
+    "styled-system": ">=5.1.5"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.15",
+    "@types/styled-system": "^5.1.13",
+    "styled-components": "^5.3.3",
+    "styled-system": "^5.1.5"
+  },
+  "dependencies": {
+    "lodash.isempty": "^4.4.0"
+  }
+}
