@@ -1,5 +1,6 @@
 module.exports = {
   rootDir: '.',
+  testEnvironment: 'jsdom',
   collectCoverageFrom: [
     'packages/**/src/*.{js,jsx,ts,tsx}',
     '!packages/**/src/typings.{ts,tsx}',
