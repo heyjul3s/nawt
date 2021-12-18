@@ -1,21 +1,26 @@
 export enum OperatorKeys {
-  'and' = '&&',
-  'or' = '||',
-  'not' = '!',
-  'only' = ':=',
-  'min' = '>=',
-  'max' = '<=',
-  'equals' = '=='
+  '&&' = '&&',
+  '||' = '||',
+  '!' = '!',
+  ':=' = ':=',
+  '>=' = '>=',
+  '<=' = '<=',
+  '==' = '=='
 }
 
-export type Operators = typeof operators;
+export type TLogicalOperators = typeof logicalOperators;
 
-export const operators = {
-  [OperatorKeys.and]: 'and',
-  [OperatorKeys.or]: ',',
-  [OperatorKeys.not]: 'not',
-  [OperatorKeys.only]: 'only',
-  [OperatorKeys.min]: 'min',
-  [OperatorKeys.max]: 'max',
-  [OperatorKeys.equals]: ':'
+export const logicalOperators = {
+  [OperatorKeys['&&']]: 'and',
+  [OperatorKeys['||']]: ',',
+  [OperatorKeys['!']]: 'not',
+  [OperatorKeys[':=']]: 'only'
+};
+
+export type TRelationalOperators = typeof relationalOperators;
+
+export const relationalOperators = {
+  [OperatorKeys['>=']]: 'min',
+  [OperatorKeys['<=']]: 'max',
+  [OperatorKeys['==']]: ':'
 };
