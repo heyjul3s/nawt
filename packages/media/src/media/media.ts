@@ -1,3 +1,5 @@
+import partition from 'lodash.partition';
+
 import {
   keywords,
   relationalOperators,
@@ -26,6 +28,7 @@ export function media(query: string): TToken[] | string {
   const rangedQueryMatches = findRangedQueries(queryValue);
   const statementQueryMatches = findStatementQueries(queryValue);
   const queryMatches = [...rangedQueryMatches, ...statementQueryMatches];
+  const queryExpressionTokens = tokenize(queryMatches);
 
   return '';
 }
@@ -57,6 +60,7 @@ export function tokenize(queryValues: RegExpMatchArray[]): TToken[] {
     (lexemes: TToken[], queryValue: RegExpMatchArray, i: number) => {
       const token = queryValue[0];
       const tokenType = findTokenParentKey(token);
+      const tokenValue = parseToken(tokenType, token);
 
       return !!tokenType
         ? [
@@ -64,7 +68,7 @@ export function tokenize(queryValues: RegExpMatchArray[]): TToken[] {
             {
               index: queryValue?.index || i,
               type: tokenType,
-              value: tokenType !== 'unit' ? enums?.[tokenType]?.[token] : token,
+              value: tokenValue,
               token
             } as TToken
           ]
@@ -72,6 +76,123 @@ export function tokenize(queryValues: RegExpMatchArray[]): TToken[] {
     },
     []
   );
+}
+
+export function parseToken(tokenType, token: string): string {
+  const queryValue = enums?.[tokenType]?.[token];
+
+  if (tokenType === 'unit') {
+    return token;
+  }
+
+  if (!!queryValue) {
+    return queryValue;
+  }
+
+  return parseRangedQueryExpression(token);
+}
+
+export function parseRangedQueryExpression(query: string): string {
+  const queryLexemes = query?.trim()?.split(' ');
+  const rangedTokens = tokenizeRanged(queryLexemes);
+  const rangedQueryExpressionTokens = createRangedQueryTokens(rangedTokens);
+
+  if (rangedQueryExpressionTokens?.length === 2) {
+    return rangedQueryExpressionTokens
+      .map(tokens => parseRangedQuery(tokens))
+      .join(' and ');
+  }
+
+  if (rangedQueryExpressionTokens?.length === 1) {
+    return parseRangedQuery(rangedQueryExpressionTokens as TToken[]);
+  }
+
+  return '';
+}
+
+export function parseRangedQuery(tokens: TToken[]): string {
+  return tokens?.length >= 1
+    ? tokens
+        .map(token => {
+          if (token.type === 'relational') {
+            return `${token.value}-`;
+          } else if (token.type === 'ranged') {
+            return `${token.value}: `;
+          } else {
+            return token.value;
+          }
+        })
+        .join('')
+    : '';
+}
+
+export function tokenizeRanged(
+  queryLexemes: string[]
+): Omit<TToken, 'index'>[] {
+  const UNIT_REGEX = /(\d+)(rem|em|px|vh|vw)/;
+
+  const dict = {
+    ...keywords.ranged,
+    ...relationalOperators
+  };
+
+  return queryLexemes.map(lexeme => {
+    const tokenType = findTokenParentKey(lexeme);
+    const value = dict?.[lexeme];
+
+    return {
+      token: lexeme,
+      type: tokenType as TokenType,
+      value: !value && lexeme.match(UNIT_REGEX) ? lexeme : value
+    };
+  });
+}
+
+export function createRangedQueryTokens(tokens): TToken[][] | TToken[] | void {
+  if (tokens?.length === 3) {
+    return tokenizeRangedQueryStatement(tokens);
+  }
+
+  if (tokens?.length === 5) {
+    return tokenizeMinMaxRangedQuery(tokens);
+  }
+
+  console.error('Incorrect ranged media query expression.');
+  return void 0;
+}
+
+export function tokenizeRangedQueryStatement(tokens) {
+  const typeSequence = ['relational', 'ranged', 'unit'];
+  return sortBy(tokens, typeSequence, 'type');
+}
+
+export function tokenizeMinMaxRangedQuery(tokens) {
+  const typeSequence = ['relational', 'ranged', 'unit'];
+  const partitionedTokens = partition(tokens, ['type', 'ranged']);
+  const queryType = partitionedTokens?.[0]?.[0];
+  const queries = partitionedTokens[1];
+
+  const chunked = queries.reduce((all, one, i) => {
+    const chunk = Math.floor(i / 2);
+
+    all[chunk] = sortBy(
+      [].concat(all[chunk] || [queryType], one),
+      typeSequence,
+      'type'
+    );
+
+    return all;
+  }, []);
+
+  return chunked;
+}
+
+export function sortBy(array, order, key) {
+  return array.sort((a, b) => {
+    const A = a[key];
+    const B = b[key];
+    return order.indexOf(A) > order.indexOf(B) ? 1 : -1;
+  });
 }
 
 export function findRangedQueryUnitType(query: string) {
