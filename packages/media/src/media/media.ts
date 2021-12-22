@@ -24,13 +24,30 @@ const enums = {
 };
 
 export function media(query: string): TToken[] | string {
+  if (!query) {
+    return '';
+  }
+
   const queryValue = removeExcessSpacings(query);
   const rangedQueryMatches = findRangedQueries(queryValue);
   const statementQueryMatches = findStatementQueries(queryValue);
   const queryMatches = [...rangedQueryMatches, ...statementQueryMatches];
   const queryExpressionTokens = tokenize(queryMatches);
 
-  return '';
+  return parseQueryExpressionTokens(queryExpressionTokens);
+}
+
+export function parseQueryExpressionTokens(tokens) {
+  return tokens?.length >= 1
+    ? tokens
+        .sort((a, b) => {
+          return a.index - b.index;
+        })
+        .map(token =>
+          token.type !== 'logical' ? `(${token.value})` : token.value
+        )
+        .join(' ')
+    : '';
 }
 
 export function removeExcessSpacings(query: string): string {
@@ -41,7 +58,7 @@ export function removeExcessSpacings(query: string): string {
 
 export function findStatementQueries(query: string): RegExpMatchArray[] {
   const regexKeys = [...Object.keys(keywords.statement)].join('|');
-  const regex = new RegExp(`(${regexKeys}|&&|!|:=)*`, 'g');
+  const regex = new RegExp(`(${regexKeys}|&&|!|:=|\\|\\|)*`, 'g');
   return matchQueries(query, regex);
 }
 
@@ -85,11 +102,15 @@ export function parseToken(tokenType, token: string): string {
     return token;
   }
 
+  if (tokenType === 'ranged') {
+    return parseRangedQueryExpression(token);
+  }
+
   if (!!queryValue) {
     return queryValue;
   }
 
-  return parseRangedQueryExpression(token);
+  return '';
 }
 
 export function parseRangedQueryExpression(query: string): string {
@@ -103,7 +124,7 @@ export function parseRangedQueryExpression(query: string): string {
       .join(' and ');
   }
 
-  if (rangedQueryExpressionTokens?.length === 1) {
+  if (rangedQueryExpressionTokens?.length === 3) {
     return parseRangedQuery(rangedQueryExpressionTokens as TToken[]);
   }
 
@@ -148,7 +169,7 @@ export function tokenizeRanged(
   });
 }
 
-export function createRangedQueryTokens(tokens): TToken[][] | TToken[] | void {
+export function createRangedQueryTokens(tokens): TToken[][] | TToken[] {
   if (tokens?.length === 3) {
     return tokenizeRangedQueryStatement(tokens);
   }
@@ -157,12 +178,11 @@ export function createRangedQueryTokens(tokens): TToken[][] | TToken[] | void {
     return tokenizeMinMaxRangedQuery(tokens);
   }
 
-  console.error('Incorrect ranged media query expression.');
-  return void 0;
+  return [];
 }
 
 export function tokenizeRangedQueryStatement(tokens) {
-  const typeSequence = ['relational', 'ranged', 'unit'];
+  const typeSequence = ['ranged', 'relational', 'unit'];
   return sortBy(tokens, typeSequence, 'type');
 }
 
