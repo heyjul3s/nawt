@@ -1,21 +1,21 @@
 import partition from 'lodash.partition';
-import { rangedMediaEnums } from '../enums';
+import { rangedMediaEnums, units } from '../enums';
 import { findTokenParentKey, sortBy } from './utils';
 import type { TToken, TTokenType } from './typings'
 
 export function parseRangedQueryExpression(query: string): string {
   const queryLexemes = query?.trim()?.split(' ');
   const rangedTokens = tokenizeRangedQuery(queryLexemes);
-  const rangedQueryExpressionTokens = sortRangedQueryTokens(rangedTokens);
+  const sortedRangedTokens = sortRangedQueryTokens(rangedTokens);
 
-  if (rangedQueryExpressionTokens?.length === 2) {
-    return rangedQueryExpressionTokens
+  if (sortedRangedTokens?.length === 2) {
+    return sortedRangedTokens
       .map(tokens => parseRangedQuery(tokens))
       .join(' and ');
   }
 
-  if (rangedQueryExpressionTokens?.length === 3) {
-    return parseRangedQuery(rangedQueryExpressionTokens as TToken[]);
+  if (sortedRangedTokens?.length === 3) {
+    return parseRangedQuery(sortedRangedTokens as TToken[]);
   }
 
   return '';
@@ -67,7 +67,8 @@ export function isMinMaxTokenValue(token: TToken) {
 export function tokenizeRangedQuery(
   queryLexemes: string[]
 ): Omit<TToken, 'index'>[] {
-  const UNIT_REGEX = /(\d+)(rem|em|px|vh|vw)/;
+  const unitRegexKeys = units.join('|')
+  const UNIT_REGEX = new RegExp(`([0-9]+)(?:(${unitRegexKeys})|(\/[0-9]+))`);
 
   return queryLexemes.map(lexeme => {
     const tokenType = findTokenParentKey(lexeme);
