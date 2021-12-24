@@ -34,7 +34,7 @@ export function removeExcessSpacings(query: string): string {
 }
 
 export function findStatementQueries(query: string): RegExpMatchArray[] {
-  const regexKeys = [...Object.keys(keywords.statement)].join('|');
+  const regexKeys = Object.keys(keywords.statement).join('|');
   const regex = new RegExp(`(${regexKeys}|&&|!|:=|\\|\\|)*`, 'g');
   return matchQueries(query, regex);
 }
