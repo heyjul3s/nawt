@@ -4,7 +4,7 @@ import {
   sortBy
 } from '../src/media/utils';
 
-describe('findTokenParentKey', () => {
+describe('findTokenParentKey - searches for a parent key to be used as a token type', () => {
   it('should return undefined if no matches were found', () => {
     expect(findTokenParentKey('lorem ipsum dolor sit amet')).toEqual(void 0);
   });
@@ -18,7 +18,7 @@ describe('findTokenParentKey', () => {
   });
 });
 
-describe('deparenthesizeQuery', () => {
+describe('deparenthesizeQuery - removes any parentheses if found in a string', () => {
   it('should remove query parentheses if present', () => {
     expect(
       deparenthesizeQuery('(pointer) && (width >= 30em || height >= 30em)')
