@@ -8,6 +8,14 @@ export enum MediaTypeKeys {
   'onlyPrint' = 'onlyPrint'
 }
 
+export type MediaTypeAll = 'all';
+export type MediaTypeScreen = 'screen';
+export type MediaTypeOnlyScreen = 'only screen';
+export type MediaTypeSpeech = 'speech';
+export type MediaTypeOnlySpeech = 'only speech';
+export type MediaTypePrint = 'print';
+export type MediaTypeOnlyPrint = 'only print';
+
 export type MediaTypes = {
   [MediaTypeKeys.all]: MediaTypeAll;
   [MediaTypeKeys.screen]: MediaTypeScreen;
@@ -17,14 +25,6 @@ export type MediaTypes = {
   [MediaTypeKeys.print]: MediaTypePrint;
   [MediaTypeKeys.onlyPrint]: MediaTypeOnlyPrint;
 };
-
-export type MediaTypeAll = 'all';
-export type MediaTypeScreen = 'screen';
-export type MediaTypeOnlyScreen = 'only screen';
-export type MediaTypeSpeech = 'speech';
-export type MediaTypeOnlySpeech = 'only speech';
-export type MediaTypePrint = 'print';
-export type MediaTypeOnlyPrint = 'only print';
 
 export const mediaTypeQueries: MediaTypes = {
   [MediaTypeKeys.all]: 'all',
