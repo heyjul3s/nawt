@@ -1,16 +1,14 @@
-import { mediaEnums, keywords } from '../enums';
+import { mediaEnums } from '../enums';
 
 export function sortBy(array, order, key) {
-  return array.sort((a, b) => {
-    const A = a[key];
-    const B = b[key];
-    return order.indexOf(A) > order.indexOf(B) ? 1 : -1;
-  });
-}
+  return order?.length >= 1
+    ? array?.sort((a, b) => {
+        const A = a[key];
+        const B = b[key];
 
-export function findRangedQueryUnitType(query: string) {
-  const unit = query?.match(/width|height|res|ratio/)?.[0];
-  return !!unit ? keywords.ranged?.[unit] : '';
+        return order?.indexOf(A) > order?.indexOf(B) ? 1 : -1;
+      })
+    : array;
 }
 
 export function findTokenParentKey(token: string): string | undefined {
@@ -18,7 +16,6 @@ export function findTokenParentKey(token: string): string | undefined {
     const isUnitType = Object.keys(mediaEnums?.[key]).find(unit =>
       token.includes(unit)
     );
-    ``;
 
     return !!mediaEnums?.[key]?.[token] || !!isUnitType ? key : void 0;
   });
