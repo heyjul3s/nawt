@@ -1,7 +1,7 @@
 import partition from 'lodash.partition';
 import { rangedMediaEnums, units } from '../enums';
 import { findTokenParentKey, sortBy } from './utils';
-import type { TToken, TTokenType } from './typings'
+import type { TToken, TTokenType, TRangedQueryToken } from './typings'
 
 export function parseRangedQueryExpression(query: string): string {
   const queryLexemes = query?.trim()?.split(' ');
@@ -21,7 +21,25 @@ export function parseRangedQueryExpression(query: string): string {
   return '';
 }
 
-export function parseRangedQuery(tokens: TToken[]): string {
+export function tokenizeRangedQuery(
+  queryLexemes: string[]
+): TRangedQueryToken[] {
+  const unitRegexKeys = units.join('|')
+  const UNIT_REGEX = new RegExp(`([0-9]+)(?:(${unitRegexKeys})|(\/[0-9]+))`);
+
+  return queryLexemes.map(lexeme => {
+    const tokenType = findTokenParentKey(lexeme);
+    const value = rangedMediaEnums?.[lexeme];
+
+    return {
+      token: lexeme,
+      type: tokenType as TTokenType,
+      value: !value && lexeme.match(UNIT_REGEX) ? lexeme : value
+    };
+  });
+}
+
+export function parseRangedQuery(tokens: TRangedQueryToken[]): string {
   const tokensLength = tokens?.length || 0;
   const isRangedQuery = isMinMaxQuery(tokens);
 
@@ -47,42 +65,32 @@ export function parseRangedQuery(tokens: TToken[]): string {
     : '';
 }
 
-export function hyphenateRelationalOperator(token: TToken) {
+export function hyphenateRelationalOperator(token: TRangedQueryToken) {
+  if (!token) {
+    return '';
+  }
+
   return isMinMaxTokenValue(token) ? `${token.value}-` : `${token.value} `;
 }
 
 export function appendRelationalOperator(
-  token: TToken,
-  comparatorToken: TToken
+  token: TRangedQueryToken,
+  comparatorToken: TRangedQueryToken
 ) {
+  if (!token) {
+    return '';
+  }
+
   return !comparatorToken || isMinMaxTokenValue(comparatorToken)
     ? `${token.value}: `
     : token.value;
 }
 
-export function isMinMaxTokenValue(token: TToken) {
+export function isMinMaxTokenValue(token: TRangedQueryToken) {
   return token?.value === 'min' || token?.value === 'max';
 }
 
-export function tokenizeRangedQuery(
-  queryLexemes: string[]
-): Omit<TToken, 'index'>[] {
-  const unitRegexKeys = units.join('|')
-  const UNIT_REGEX = new RegExp(`([0-9]+)(?:(${unitRegexKeys})|(\/[0-9]+))`);
-
-  return queryLexemes.map(lexeme => {
-    const tokenType = findTokenParentKey(lexeme);
-    const value = rangedMediaEnums?.[lexeme];
-
-    return {
-      token: lexeme,
-      type: tokenType as TTokenType,
-      value: !value && lexeme.match(UNIT_REGEX) ? lexeme : value
-    };
-  });
-}
-
-export function sortRangedQueryTokens(tokens): TToken[][] | TToken[] {
+export function sortRangedQueryTokens(tokens): TRangedQueryToken[][] | TRangedQueryToken[] {
   if (tokens?.length === 5) {
     return sortMinMaxRangedQuery(tokens);
   }
@@ -94,12 +102,12 @@ export function sortRangedQueryTokens(tokens): TToken[][] | TToken[] {
   return [];
 }
 
-export function isMinMaxQuery(tokens) {
-  return !!tokens.filter(token => token.token === '>=' || token.token === '<=')
+export function isMinMaxQuery(tokens: TRangedQueryToken[]) {
+  return !!tokens?.filter(token => token.token === '>=' || token.token === '<=')
     ?.length;
 }
 
-export function sortRangedQueryStatement(tokens) {
+export function sortRangedQueryStatement(tokens: TRangedQueryToken[]) {
   const typeSequence = isMinMaxQuery(tokens)
     ? ['relational', 'ranged', 'unit']
     : ['ranged', 'relational', 'unit'];
@@ -107,7 +115,7 @@ export function sortRangedQueryStatement(tokens) {
   return sortBy(tokens, typeSequence, 'type');
 }
 
-export function sortMinMaxRangedQuery(tokens) {
+export function sortMinMaxRangedQuery(tokens: TRangedQueryToken[]) {
   const typeSequence = ['relational', 'ranged', 'unit'];
   const partitionedTokens = partition(tokens, ['type', 'ranged']);
   const queryType = partitionedTokens?.[0]?.[0];
