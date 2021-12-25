@@ -20,14 +20,3 @@ export function findTokenParentKey(token: string): string | undefined {
     return !!mediaEnums?.[key]?.[token] || !!isUnitType ? key : void 0;
   });
 }
-
-export function deparenthesizeQuery(query: string): string {
-  // * finds match of group within '(', ')' eg. '(pointerNone)' but includes '(', ')' in result
-  const QUERY_GROUPED_BY_PARENTHESES_REGEX = /\((.*?)\)/g;
-  // * mathces '(', ')' characters
-  const PARENTHESES_REGEX = /(\(|\))/gim;
-
-  return QUERY_GROUPED_BY_PARENTHESES_REGEX.test(query)
-    ? query.replace(PARENTHESES_REGEX, '')
-    : query;
-}

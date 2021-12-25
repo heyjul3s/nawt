@@ -1,17 +1,32 @@
+import { css } from 'styled-components';
 import { parseRangedQueryExpression } from './rangedMedia';
-import { mediaEnums, keywords } from '../enums';
+import { mediaEnums, keywords, mediaTypeQueries } from '../enums';
 import { findTokenParentKey } from './utils';
-import type { TToken } from './typings'
+import type { TToken, TMediaTypes } from './typings';
 
-export function media(query: string): TToken[] | string {
+export function media(query: string, mediaType: TMediaTypes) {
+  const mediaqueryExpression = createMediaQuery(query);
+  const mediaDeviceType = mediaTypeQueries?.[mediaType];
+  const mediaQuery = !!mediaDeviceType ? `@media ${mediaDeviceType}` : '@media';
+
+  return (first, ...interpolations) =>
+    !!mediaqueryExpression
+      ? css`
+          ${mediaQuery} ${mediaqueryExpression} {
+            ${css(first, ...interpolations)}
+          }
+        `
+      : css(first, ...interpolations);
+}
+
+export function createMediaQuery(query: string): TToken[] | string {
   if (!query) {
     return '';
   }
 
-  const queryValue = removeExcessSpacings(query);
-  const rangedQueryMatches = findRangedQueries(queryValue);
-  const statementQueryMatches = findStatementQueries(queryValue);
-  const queryExpressionTokens = tokenize([...rangedQueryMatches, ...statementQueryMatches]);
+  const queryValue = prepareQuery(query);
+  const queryMatches = findQueryMatches(queryValue);
+  const queryExpressionTokens = tokenize(queryMatches);
 
   return parseQueryExpressionTokens(queryExpressionTokens);
 }
@@ -27,10 +42,33 @@ export function parseQueryExpressionTokens(tokens) {
     : '';
 }
 
+export function prepareQuery(query: string) {
+  const deparenthesizedQuery = deparenthesizeQuery(query);
+  return removeExcessSpacings(deparenthesizedQuery);
+}
+
+export function deparenthesizeQuery(query: string): string {
+  // * finds match of group within '(', ')' eg. '(pointerNone)' but includes '(', ')' in result
+  const QUERY_GROUPED_BY_PARENTHESES_REGEX = /\((.*?)\)/g;
+  // * mathces '(', ')' characters
+  const PARENTHESES_REGEX = /(\(|\))/gim;
+
+  return QUERY_GROUPED_BY_PARENTHESES_REGEX.test(query)
+    ? query.replace(PARENTHESES_REGEX, '')
+    : query;
+}
+
 export function removeExcessSpacings(query: string): string {
   // * covers spaces, tabs, and newlines
   const SPACING_REGEX = /\s\s+/g;
   return !!query ? query.replace(SPACING_REGEX, ' ') : query;
+}
+
+export function findQueryMatches(query) {
+  const rangedQueryMatches = findRangedQueries(query);
+  const statementQueryMatches = findStatementQueries(query);
+
+  return [...rangedQueryMatches, ...statementQueryMatches]
 }
 
 export function findStatementQueries(query: string): RegExpMatchArray[] {
@@ -52,9 +90,9 @@ export function matchQueries(query: string, regex: RegExp): RegExpMatchArray[] {
 export function tokenize(queryValues: RegExpMatchArray[]): TToken[] {
   return queryValues.reduce(
     (lexemes: TToken[], queryValue: RegExpMatchArray, i: number) => {
-      const token = queryValue[0];
-      const tokenType = findTokenParentKey(token);
-      const tokenValue = parseToken(tokenType, token);
+      const query = queryValue[0];
+      const tokenType = findTokenParentKey(query);
+      const tokenValue = parseToken(tokenType, query);
 
       return !!tokenType
         ? [
@@ -63,7 +101,7 @@ export function tokenize(queryValues: RegExpMatchArray[]): TToken[] {
               index: queryValue?.index || i,
               type: tokenType,
               value: tokenValue,
-              token
+              token: query
             } as TToken
           ]
         : lexemes;
@@ -72,15 +110,15 @@ export function tokenize(queryValues: RegExpMatchArray[]): TToken[] {
   );
 }
 
-export function parseToken(tokenType, token: string): string {
-  const queryValue = mediaEnums?.[tokenType]?.[token];
+export function parseToken(tokenType, query: string): string {
+  const queryValue = mediaEnums?.[tokenType]?.[query];
 
   if (tokenType === 'unit') {
-    return token;
+    return query;
   }
 
   if (tokenType === 'ranged') {
-    return parseRangedQueryExpression(token);
+    return parseRangedQueryExpression(query);
   }
 
   if (!!queryValue) {
