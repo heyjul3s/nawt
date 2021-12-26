@@ -32,12 +32,16 @@ export function createMediaQuery(query: string): TToken[] | string {
 }
 
 export function parseQueryExpressionTokens(tokens) {
+  const PARENTHESES_REGEX = /(\(|\))/gi;
+
   return tokens?.length >= 1
     ? tokens
         .sort((a, b) => a.index - b.index)
-        .map(token =>
-          token.type !== 'logical' ? `(${token.value})` : token.value
-        )
+        .map(token => {
+          return token.type !== 'logical' && !token.value.match(PARENTHESES_REGEX) 
+            ? `(${token.value})` 
+            : token.value
+        })
         .join(' ')
     : '';
 }
@@ -51,7 +55,7 @@ export function deparenthesizeQuery(query: string): string {
   // * finds match of group within '(', ')' eg. '(pointerNone)' but includes '(', ')' in result
   const QUERY_GROUPED_BY_PARENTHESES_REGEX = /\((.*?)\)/g;
   // * mathces '(', ')' characters
-  const PARENTHESES_REGEX = /(\(|\))/gim;
+  const PARENTHESES_REGEX = /(\(|\))/gi;
 
   return QUERY_GROUPED_BY_PARENTHESES_REGEX.test(query)
     ? query.replace(PARENTHESES_REGEX, '')
@@ -88,7 +92,7 @@ export function matchQueries(query: string, regex: RegExp): RegExpMatchArray[] {
 }
 
 export function tokenize(queryValues: RegExpMatchArray[]): TToken[] {
-  return queryValues.reduce(
+  return queryValues?.reduce(
     (lexemes: TToken[], queryValue: RegExpMatchArray, i: number) => {
       const query = queryValue[0];
       const tokenType = findTokenParentKey(query);
