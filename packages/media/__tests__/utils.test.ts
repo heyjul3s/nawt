@@ -1,8 +1,4 @@
-import {
-  deparenthesizeQuery,
-  findTokenParentKey,
-  sortBy
-} from '../src/media/utils';
+import { findTokenParentKey, sortBy } from '../src/media/utils';
 
 describe('findTokenParentKey - searches for a parent key to be used as a token type', () => {
   it('should return undefined if no matches were found', () => {
@@ -15,21 +11,6 @@ describe('findTokenParentKey - searches for a parent key to be used as a token t
     expect(findTokenParentKey('width')).toEqual('ranged');
     expect(findTokenParentKey('3.5rem')).toEqual('unit');
     expect(findTokenParentKey('-1')).toEqual('unit');
-  });
-});
-
-describe('deparenthesizeQuery - removes any parentheses if found in a string', () => {
-  it('should remove query parentheses if present', () => {
-    expect(
-      deparenthesizeQuery('(pointer) && (width >= 30em || height >= 30em)')
-    ).toEqual('pointer && width >= 30em || height >= 30em');
-  });
-
-  it('should return the query value as is if no parentheses are found', () => {
-    expect(deparenthesizeQuery('')).toEqual('');
-    expect(deparenthesizeQuery('pointer && width >= 30em')).toEqual(
-      'pointer && width >= 30em'
-    );
   });
 });
 
