@@ -10,7 +10,7 @@ export function parseRangedQueryExpression(query: string): string {
 
   if (sortedRangedTokens?.length === 2) {
     return sortedRangedTokens
-      .map(tokens => parseRangedQuery(tokens))
+      .map(tokens => `(${parseRangedQuery(tokens)})`)
       .join(' and ');
   }
 

@@ -22,7 +22,7 @@ describe('parseRangedQueryExpression', () => {
     expect(parseRangedQueryExpression('width == 30em')).toEqual('width: 30em');
 
     expect(parseRangedQueryExpression('30em >= width <= 50em')).toEqual(
-      'min-width: 30em and max-width: 50em'
+      '(min-width: 30em) and (max-width: 50em)'
     );
   });
 
