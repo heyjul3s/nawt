@@ -1,5 +1,6 @@
 import {
-  hexToRGB,
+  hexToRgb,
+  hexToRgba,
   getHexColorRGBvalues,
   splitHexToRGB,
   formatHexValue,
@@ -7,7 +8,39 @@ import {
   isValidHex
 } from '../src/hex-to-rgb';
 
-describe('@artifak/hextorgb', () => {
+describe('hexToRgb', () => {
+  describe('hexToRgb', () => {
+    it('returns a string RGB value with valid hex and alpha values', () => {
+      expect(hexToRgb('#DF3EA1')).toEqual('rgb(223, 62, 161)');
+      expect(hexToRgb('#df3ea1')).toEqual('rgb(223, 62, 161)');
+    });
+
+    it('returns a string RGBA value with valid hex and default alpha values', () => {
+      expect(hexToRgb('#DF3EA1')).toEqual('rgb(223, 62, 161)');
+      expect(hexToRgb('#df3ea1')).toEqual('rgb(223, 62, 161)');
+    });
+
+    it('returns UNDEFINED with invalid non-hexadecimal color string value', () => {
+      expect(hexToRgb('Lorem Ipsum Dolor Sit Amet')).toEqual(void 0);
+    });
+  });
+
+  describe('hexToRgba', () => {
+    it('returns a string RGBA value with valid hex and alpha values', () => {
+      expect(hexToRgba('#DF3EA1', 0.5)).toEqual('rgba(223, 62, 161, 0.5)');
+      expect(hexToRgba('#df3ea1', 0.5)).toEqual('rgba(223, 62, 161, 0.5)');
+    });
+
+    it('returns a string RGBA value with valid hex and default alpha values', () => {
+      expect(hexToRgba('#DF3EA1')).toEqual('rgba(223, 62, 161, 1)');
+      expect(hexToRgba('#df3ea1')).toEqual('rgba(223, 62, 161, 1)');
+    });
+
+    it('returns UNDEFINED with invalid non-hexadecimal color string value', () => {
+      expect(hexToRgba('Lorem Ipsum Dolor Sit Amet', 0.5)).toEqual(void 0);
+    });
+  });
+
   describe('isValidHex', () => {
     it('returns TRUE with full length hexadecimal color string value', () => {
       expect(isValidHex('#FAFDFC')).toEqual(true);
@@ -79,22 +112,6 @@ describe('@artifak/hextorgb', () => {
 
     it('returns UNDEFINED with invalid hex string values', () => {
       expect(getHexColorRGBvalues('Hello World')).toEqual(void 0);
-    });
-  });
-
-  describe('hexToRGB', () => {
-    it('returns a string RGB value with valid hex and alpha values', () => {
-      expect(hexToRGB('#DF3EA1')).toEqual('rgb(223, 62, 161)');
-      expect(hexToRGB('#df3ea1')).toEqual('rgb(223, 62, 161)');
-    });
-
-    it('returns a string RGBA value with valid hex and default alpha values', () => {
-      expect(hexToRGB('#DF3EA1')).toEqual('rgb(223, 62, 161)');
-      expect(hexToRGB('#df3ea1')).toEqual('rgb(223, 62, 161)');
-    });
-
-    it('returns UNDEFINED with invalid non-hexadecimal color string value', () => {
-      expect(hexToRGB('Lorem Ipsum Dolor Sit Amet')).toEqual(void 0);
     });
   });
 });
