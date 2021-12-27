@@ -1,10 +1,18 @@
 import { RGBColor } from './typings';
 
-export function hexToRGB(hex: string): string | void {
+export function hexToRgb(hex: string): string | void {
   const color = getHexColorRGBvalues(hex);
 
   if (!!color) {
     return `rgb(${color.r}, ${color.g}, ${color.b})`;
+  }
+}
+
+export function hexToRgba(hex: string, alpha = 1): string | void {
+  const color = getHexColorRGBvalues(hex);
+
+  if (!!color) {
+    return `rgba(${color.r}, ${color.g}, ${color.b}, ${alpha})`;
   }
 }
 
@@ -15,7 +23,7 @@ export function getHexColorRGBvalues(hex: string): RGBColor | void {
     return {
       r: parseInt(hexValue[1], 16),
       g: parseInt(hexValue[2], 16),
-      b: parseInt(hexValue[3], 16),
+      b: parseInt(hexValue[3], 16)
     };
   }
 }
