@@ -1,12 +1,12 @@
 {
-  "name": "block",
+  "name": "@artefakt/block",
   "version": "0.1.0",
-  "description": "",
+  "description": "Basic generic component block with predefined CSS props",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "devDependencies": {
     "@types/styled-components": "^5.1.15",

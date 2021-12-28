@@ -1,11 +1,11 @@
 {
-  "name": "colors",
+  "name": "@artefakt/colors",
   "version": "0.1.0",
-  "description": "",
+  "description": "Various color utilities with color value conversion functions and more",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT"
 }
