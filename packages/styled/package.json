@@ -1,5 +1,5 @@
 {
-  "name": "styled",
+  "name": "@artefakt/styled",
   "version": "0.1.0",
   "description": "A small library of Styled Components utilities",
   "main": "index.js",

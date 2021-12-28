@@ -1,7 +1,7 @@
 {
-  "name": "flex",
+  "name": "@artefakt/flex",
   "version": "0.1.0",
-  "description": "A flexbox version of @artifak/flex. You can also view the docs at [Artifak Flex](https://www.artifak.dev/?content=Flex).",
+  "description": "Flexbox styled component with capability to define number of columns",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

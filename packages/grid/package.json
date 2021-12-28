@@ -1,7 +1,7 @@
 {
-  "name": "grid",
+  "name": "@artefakt/grid",
   "version": "0.1.0",
-  "description": "@artifak/grid is a component for quickly setting grid columns. Apart from that, the usual CSS grid styles can also be applied to your liking. You can also view the docs at [Artifak Grid](https://www.artifak.dev/?content=Grid).",
+  "description": "A component for quickly setting grid columns with capbility to define template auto columns.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
