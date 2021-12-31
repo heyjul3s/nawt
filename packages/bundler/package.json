@@ -4,7 +4,7 @@
   "description": "artefakt bundler",
   "main": "index.js",
   "bin": {
-    "bundlder": "./index.js"
+    "bundler": "./src/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
