@@ -16,8 +16,8 @@ export type TStyledSetConfig = Partial<{
 }>;
 
 export function styledSet(
-  baseElement: keyof JSX.IntrinsicElements,
-  config: TStyledSetConfig
+  config: TStyledSetConfig,
+  baseElement: keyof JSX.IntrinsicElements = 'div'
 ) {
   const StyledBase = !isEmpty(config.baseStyles)
     ? styledObject(baseElement, config.baseStyles)
