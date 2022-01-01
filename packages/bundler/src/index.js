@@ -11,6 +11,7 @@ const { src, name, dependencies, peerDependencies } = require(path.join(
 ));
 
 const outFileName = name.replace('@artefakt/', '');
+const DIR_PATH = path.resolve.bind(null, process.cwd());
 
 const commonConfig = {
   entryPoints: ['src/index.ts'],
@@ -18,6 +19,11 @@ const commonConfig = {
   minify: true,
   external: Object.keys(dependencies).concat(Object.keys(peerDependencies))
 };
+
+new Generator({
+  entry: DIR_PATH('src/index.ts'),
+  output: DIR_PATH('dist/index.d.ts')
+}).generate();
 
 build({
   ...commonConfig,
@@ -29,8 +35,3 @@ build({
   outfile: `dist/${outFileName}.esm.js`,
   format: 'esm'
 });
-
-new Generator({
-  entry: 'src/typings.ts',
-  output: 'dist/index.d.ts'
-}).generate();
