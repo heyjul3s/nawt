@@ -1,9 +1,11 @@
 import isEmpty from 'lodash.isempty';
-import { styleFn, VariantArgs, Config } from 'styled-system';
+import { styleFn } from 'styled-system';
 import { isStyledComponent } from 'styled-components';
 import { styledObject } from './styled-object';
 
-type TStyledSetConfig = Partial<{
+import type { VariantArgs, Config} from 'styled-system'
+
+export type TStyledSetConfig = Partial<{
   baseStyles: any;
   components: any;
   attrs: any;
@@ -32,11 +34,12 @@ export function styledSet(
       attrs,
       ...styles
     } = props as TStyledSetConfig;
+
     const BaseElement = isStyledComponent(StyledBase) ? StyledBase : as;
 
     return {
       ...components,
-      [name]: styledObject(BaseElement, styles, {
+      [name]: styledObject(BaseElement, {...styles}, {
         attrs,
         compose,
         variants,
