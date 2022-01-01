@@ -18,23 +18,19 @@ import {
 } from 'styled-system';
 
 import type { Config, VariantArgs } from 'styled-system';
-import type { ScalableCSSObject } from './typings';
+import type { CSSObject, StyledComponent } from 'styled-components'
 
-type TStyledObject = {
-  element: keyof JSX.IntrinsicElements;
-  styles: ScalableCSSObject;
-  props: Partial<{
-    attrs: any;
-    compose: styleFn[];
-    variants: VariantArgs;
-    system: Config;
-  }>;
+export type TStyledObjectProps = {
+  attrs: any;
+  compose: styleFn[];
+  variants: VariantArgs;
+  system: Config;
 };
 
 export function styledObject(
-  element: keyof JSX.IntrinsicElements,
-  styles: any,
-  props = { attrs: {}, compose: [], system: {}, variants: {} }
+  element: keyof JSX.IntrinsicElements | StyledComponent<keyof JSX.IntrinsicElements, any, any, keyof any>,
+  styles: CSSObject,
+  props: Partial<TStyledObjectProps> = { attrs: {}, compose: [], system: {}, variants: {} }
 ) {
   return styled(element).attrs(props.attrs)(
     styles,
@@ -48,9 +44,9 @@ export function styledObject(
       shadow,
       space,
       typography,
-      ...props.compose
+      ...props.compose as TStyledObjectProps["compose"]
     ),
-    !isEmpty(props?.variants) && variant(props.variants),
-    !isEmpty(props?.system) && system(props.system)
+    !isEmpty(props?.variants) && variant(props.variants as TStyledObjectProps["variants"]),
+    !isEmpty(props?.system) && system(props.system as TStyledObjectProps["system"])
   );
 }

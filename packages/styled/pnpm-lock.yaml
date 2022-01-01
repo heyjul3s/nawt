@@ -1,8 +1,10 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@artefakt/bundler': workspace:0.1.0
   '@types/styled-components': ^5.1.15
   '@types/styled-system': ^5.1.13
+  csstype: ^3.0.10
   lodash.isempty: ^4.4.0
   styled-components: ^5.3.3
   styled-system: ^5.1.5
@@ -11,8 +13,10 @@ dependencies:
   lodash.isempty: 4.4.0
 
 devDependencies:
+  '@artefakt/bundler': link:../bundler
   '@types/styled-components': 5.1.15
   '@types/styled-system': 5.1.13
+  csstype: 3.0.10
   styled-components: 5.3.3
   styled-system: 5.1.5
 

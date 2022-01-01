@@ -2,19 +2,27 @@
   "name": "@artefakt/styled",
   "version": "0.1.0",
   "description": "A small library of Styled Components utilities",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "bundler"
   },
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
+  "main": "dist/styled.js",
+  "module": "dist/styled.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "styled-components": ">=5.2.1",
     "styled-system": ">=5.1.5"
   },
   "devDependencies": {
+    "@artefakt/bundler": "workspace:0.1.0",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",
+    "csstype": "^3.0.10",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
   },
