@@ -2,17 +2,27 @@
   "name": "@artefakt/text",
   "version": "0.1.0",
   "description": "Text styled components.",
-  "main": "index.js",
+  "main": "dist/text.js",
+  "module": "dist/test.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "bundler"
   },
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
+  "dependencies": {
+    "@artefakt/styled": "workspace:0.1.0"
+  },
   "devDependencies": {
+    "@artefakt/bundler": "workspace:0.1.0",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",
+    "csstype": "^3.0.10",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
-  },
-  "dependencies": {}
+  }
 }
