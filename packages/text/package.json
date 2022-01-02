@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Text styled components.",
   "main": "dist/text.js",
-  "module": "dist/test.esm.js",
+  "module": "dist/text.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
