@@ -13,11 +13,16 @@ const { src, name, dependencies, peerDependencies } = require(path.join(
 const outFileName = name.replace('@artefakt/', '');
 const DIR_PATH = path.resolve.bind(null, process.cwd());
 
+const dependencyKeys = !!dependencies ? Object.keys(dependencies) : [];
+const peerDependencyKeys = !!peerDependencies
+  ? Object.keys(peerDependencies)
+  : [];
+
 const commonConfig = {
   entryPoints: ['src/index.ts'],
   bundle: true,
   minify: true,
-  external: Object.keys(dependencies).concat(Object.keys(peerDependencies))
+  external: [...dependencyKeys, ...peerDependencyKeys]
 };
 
 new Generator({
