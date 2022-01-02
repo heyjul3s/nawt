@@ -37,3 +37,8 @@ export type TTypographyProps =
   | IWhiteSpaceProps
   | IWordBreakProps
   | IWordSpacingProps;
+
+export type TTextProps = {
+  trim?: boolean;
+  noOfLines?: number;
+};
