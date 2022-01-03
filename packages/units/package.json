@@ -2,10 +2,19 @@
   "name": "@artefakt/units",
   "version": "0.1.0",
   "description": "A utility library for CSS unit conversions.",
-  "main": "index.js",
+  "main": "dist/units.js",
+  "module": "dist/units.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "bundler"
   },
   "author": "Julian Low <hello@heyjul.es>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@artefakt/bundler": "workspace:0.1.0"
+  }
 }
