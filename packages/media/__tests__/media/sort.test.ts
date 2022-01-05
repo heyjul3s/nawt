@@ -1,16 +1,41 @@
-import { findTokenParentKey, sortBy } from '../src/media/utils';
+import { sortBy, sortRangedQueryTokens } from '../../src/media/sort';
 
-describe('findTokenParentKey - searches for a parent key to be used as a token type', () => {
-  it('should return undefined if no matches were found', () => {
-    expect(findTokenParentKey('lorem ipsum dolor sit amet')).toEqual(void 0);
+describe('sortRangedQueryTokens - sorts ranged media query tokens in accordance to predefined sequences before parsing to a valid value', () => {
+  it('should sort and split min/max ranged query tokens to 2 separate arrays', () => {
+    expect(
+      sortRangedQueryTokens([
+        { token: 'width', type: 'ranged', value: 'width' },
+        { token: '<=', type: 'relational', value: 'max' },
+        { token: '50em', type: 'unit', value: '50em' }
+      ])
+    ).toEqual([
+      { token: '<=', type: 'relational', value: 'max' },
+      { token: 'width', type: 'ranged', value: 'width' },
+      { token: '50em', type: 'unit', value: '50em' }
+    ]);
   });
 
-  it('should return the type of of a token', () => {
-    expect(findTokenParentKey('landscape')).toEqual('statement');
-    expect(findTokenParentKey('&&')).toEqual('logical');
-    expect(findTokenParentKey('width')).toEqual('ranged');
-    expect(findTokenParentKey('3.5rem')).toEqual('unit');
-    expect(findTokenParentKey('-1')).toEqual('unit');
+  it('should sort and split min/max ranged query tokens to 2 separate arrays', () => {
+    expect(
+      sortRangedQueryTokens([
+        { token: '30em', type: 'unit', value: '30em' },
+        { token: '>=', type: 'relational', value: 'min' },
+        { token: 'width', type: 'ranged', value: 'width' },
+        { token: '<=', type: 'relational', value: 'max' },
+        { token: '50em', type: 'unit', value: '50em' }
+      ])
+    ).toEqual([
+      [
+        { token: '>=', type: 'relational', value: 'min' },
+        { token: 'width', type: 'ranged', value: 'width' },
+        { token: '30em', type: 'unit', value: '30em' }
+      ],
+      [
+        { token: '<=', type: 'relational', value: 'max' },
+        { token: 'width', type: 'ranged', value: 'width' },
+        { token: '50em', type: 'unit', value: '50em' }
+      ]
+    ]);
   });
 });
 
