@@ -15,4 +15,4 @@ export const rangedMediaEnums = {
 };
 
 export { keywords, logicalOperators, relationalOperators, units };
-export { mediaTypeQueries, MediaTypeKeys } from './mediaTypes';
+export { mediaTypeQueries, MediaTypeKeys } from './media-types';
