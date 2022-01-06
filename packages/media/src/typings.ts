@@ -35,3 +35,9 @@ export type TMediaTypes =
   | 'onlySpeech'
   | 'print'
   | 'onlyPrint';
+
+export type TCreateMediaQueries = {
+  key: string;
+  query: string;
+  mediaType?: TMediaTypes;
+};

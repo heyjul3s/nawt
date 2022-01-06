@@ -2,16 +2,15 @@ import type { TToken } from '../typings';
 import { tokenizeRangedQuery } from './token';
 import { parseRangedQuery } from './parse'
 import { sortRangedQueryTokens } from './sort';
+import { regex } from './regex';
 
 export function renderMediaQuery(tokens: TToken[]): string {
-  const PARENTHESES_REGEX = /(\(|\))/gi;
-
   return tokens?.length >= 1
     ? tokens
         .sort((a, b) => a.index - b.index)
         .map(token => {
           return token.type !== 'logical' &&
-            !token?.value?.match(PARENTHESES_REGEX)
+            !token?.value?.match(regex.PARENTHESES)
             ? `(${token.value})`
             : token.value;
         })

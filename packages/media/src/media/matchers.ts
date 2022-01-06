@@ -1,4 +1,4 @@
-import { keywords } from '../enums';
+import { regex } from './regex';
 
 export function findQueryMatches(query) {
   const rangedQueryMatches = findRangedQueries(query);
@@ -8,14 +8,11 @@ export function findQueryMatches(query) {
 }
 
 export function findStatementQueries(query: string): RegExpMatchArray[] {
-  const regexKeys = Object.keys(keywords.statement).join('|');
-  const regex = new RegExp(`(${regexKeys}|&&|!|:=|\\|\\|)*`, 'g');
-  return matchQueries(query, regex);
+  return matchQueries(query, regex.STATEMENT_QUERY);
 }
 
 export function findRangedQueries(query: string): RegExpMatchArray[] {
-  const RANGE_QUERY_REGEX = /(?:(\d+)(rem|em|px|vh|vw)\s*?(>=|==|<=)\s*?)?((width|height|ratio|res)\s*?(>=|==|<=)\s*?(\d+)(rem|em|px|vh|vw))/g;
-  return matchQueries(query, RANGE_QUERY_REGEX);
+  return matchQueries(query, regex.RANGED_QUERY);
 }
 
 export function matchQueries(query: string, regex: RegExp): RegExpMatchArray[] {

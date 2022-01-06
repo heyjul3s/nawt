@@ -1,6 +1,8 @@
-import { mediaEnums, rangedMediaEnums, units } from '../enums';
+import { mediaEnums, rangedMediaEnums } from '../enums';
 import { parseMediaQuery } from './parse';
+import { regex } from './regex';
 import type { TToken, TTokenType,TRangedQueryToken } from '../typings';
+
 
 export function tokenizeMediaQuery(queryValues: RegExpMatchArray[]): TToken[] {
   return queryValues?.reduce(
@@ -28,9 +30,6 @@ export function tokenizeMediaQuery(queryValues: RegExpMatchArray[]): TToken[] {
 export function tokenizeRangedQuery(
   queryLexemes: string[]
 ): TRangedQueryToken[] {
-  const unitRegexKeys = units.join('|');
-  const UNIT_REGEX = new RegExp(`([0-9]+)(?:(${unitRegexKeys})|(\/[0-9]+))`);
-
   return queryLexemes.map(lexeme => {
     const tokenType = findTokenParentKey(lexeme);
     const value = rangedMediaEnums?.[lexeme];
@@ -38,7 +37,7 @@ export function tokenizeRangedQuery(
     return {
       token: lexeme,
       type: tokenType as TTokenType,
-      value: !value && lexeme.match(UNIT_REGEX) ? lexeme : value
+      value: !value && lexeme.match(regex.UNIT) ? lexeme : value
     };
   });
 }
