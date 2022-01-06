@@ -1,8 +1,8 @@
-import { boundaryTypes } from './mediaBoundaries';
-import { mediaAccessibilityQueries } from './mediaAccessibilty';
-import { mediaDisplayQueries } from './mediaDisplay';
-import { mediaInputQueries } from './mediaInput';
-import { mediaTypeQueries } from './mediaTypes';
+import { boundaryTypes } from './media-boundaries';
+import { mediaAccessibilityQueries } from './media-accessibilty';
+import { mediaDisplayQueries } from './media-display';
+import { mediaInputQueries } from './media-input';
+import { mediaTypeQueries } from './media-types';
 
 export const keywords = {
   // * statement - queries that require a single value
