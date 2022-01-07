@@ -26,7 +26,7 @@ export function extractRgbValue(value: string): string[] {
         ?.split('(')[1]
         ?.split(')')?.[0]
         ?.split(',')
-    : void 0;
+    : [];
 }
 
 export function isString(value: unknown): boolean {
