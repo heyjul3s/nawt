@@ -1,38 +1,17 @@
-import styled from 'styled-components';
+import { styledObject } from '@artefakt/styled';
 
 import {
   alignItems,
   alignContent,
-  background,
-  border,
-  color,
-  compose,
-  display,
   justifyItems,
   justifyContent,
-  grid,
-  layout,
-  position,
-  shadow,
-  space,
-  typography
+  grid
 } from 'styled-system';
 
-export const GridBase = styled.div(
-  compose(
-    alignItems,
-    alignContent,
-    background,
-    border,
-    color,
-    display,
-    grid,
-    justifyItems,
-    justifyContent,
-    layout,
-    position,
-    shadow,
-    space,
-    typography
-  )
+export const GridBase = styledObject(
+  'div',
+  {},
+  {
+    compose: [alignItems, alignContent, grid, justifyItems, justifyContent]
+  }
 );

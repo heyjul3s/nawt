@@ -17,6 +17,7 @@
   "devDependencies": {
     "@testing-library/react": "^12.1.2",
     "@artefakt/bundler": "workspace:0.1.0",
+    "@artefakt/styled": "workspace:0.1.0",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",
     "styled-components": "^5.3.3",
