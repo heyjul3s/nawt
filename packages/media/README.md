@@ -19,7 +19,7 @@ pnpm install @artefakt/media
 
 ## **API**
 
-### **mq**(query: string, mediaType: TMediaTypes)
+### **`mq`**(query: `string`, mediaType: `TMediaTypes`)
 
 Primary function to help in writing styles with media queries.
 
@@ -88,7 +88,7 @@ type TMediaTypes = {
 
 ---
 
-### **createMq**(query: string, mediaType?: TMediaTypes)
+### **`createMq`**(query: `string`, mediaType?: `TMediaTypes`)
 
 This function accepts a single query string and parses it to a media query string.
 
@@ -116,7 +116,7 @@ type TMediaTypes = {
 
 ---
 
-### **createMqs**(queries: TCreateMediaQueries[])
+### **`createMqs`**(queries: `TCreateMediaQueries[]`)
 
 This function accepts an array of objects with each describing a media query and returns an object with the parsed media queries in accordance to its assigned keys.
 
