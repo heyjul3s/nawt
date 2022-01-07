@@ -11,14 +11,14 @@ import {
   JustifySelfProps
 } from 'styled-system';
 
-export type GridBaseProps =
+export type TGridBaseProps =
   | AlignItemsProps
   | AlignContentProps
   | JustifyItemsProps
   | JustifyContentProps
   | GridProps;
 
-export type GridItemBaseProps =
+export type TGridItemBaseProps =
   | AlignSelfProps
   | GridAreaProps
   | GridColumnProps

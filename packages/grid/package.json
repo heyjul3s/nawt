@@ -2,14 +2,22 @@
   "name": "@artefakt/grid",
   "version": "0.1.0",
   "description": "A component for quickly setting grid columns with capbility to define template auto columns.",
-  "main": "index.js",
+  "main": "dist/grid.js",
+  "module": "dist/grid.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "bundler"
   },
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "devDependencies": {
     "@testing-library/react": "^12.1.2",
+    "@artefakt/bundler": "workspace:0.1.0",
+    "@artefakt/styled": "workspace:0.1.0",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",
     "styled-components": "^5.3.3",
