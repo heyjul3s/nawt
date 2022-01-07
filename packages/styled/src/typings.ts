@@ -3,15 +3,15 @@ import type { StyledComponent } from 'styled-components';
 import type { Scale, Config, VariantArgs, styleFn } from 'styled-system';
 
 import type {
-   BackgroundProps,
-      BorderProps,
-      ColorProps,
-      DisplayProps,
-      LayoutProps,
-      PositionProps,
-      ShadowProps,
-      SpaceProps,
-      TypographyProps,
+  BackgroundProps,
+  BorderProps,
+  ColorProps,
+  DisplayProps,
+  LayoutProps,
+  PositionProps,
+  ShadowProps,
+  SpaceProps,
+  TypographyProps,
 } from 'styled-system'
 
 export type TCSSObjectWithScale = CSS.Properties<string | number | Scale>;
