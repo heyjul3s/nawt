@@ -1,30 +1,8 @@
 import isEmpty from 'lodash.isempty';
-import { styleFn } from 'styled-system';
-import { CSSObject, isStyledComponent } from 'styled-components';
+import { isStyledComponent } from 'styled-components';
 import { styledObject } from './styled-object';
 
-import type { VariantArgs, Config } from 'styled-system';
-import type { TStyledObject } from './typings';
-
-export type TStyledSetConfig = {
-  base: {
-    styles: CSSObject;
-    element: keyof JSX.IntrinsicElements
-  };
-  components: Record<string, TComponent>;
-  attrs?: any;
-  compose?: styleFn[];
-  variants?: VariantArgs;
-  system?: Config;
-};
-
-type TComponent = Partial<{
-  attrs: any;
-  as: keyof JSX.IntrinsicElements;
-  compose: styleFn[];
-  variants: VariantArgs;
-  system: Config;
-}> & CSSObject;
+import type { TStyledObject, TStyledSetComponent, TStyledSetConfig } from './typings';
 
 export function styledSet(config: TStyledSetConfig) {
   const StyledBase = !isEmpty(config.base)
@@ -41,7 +19,7 @@ export function styledSet(config: TStyledSetConfig) {
       system = {},
       attrs = {},
       ...styles
-    } = props as TComponent;
+    } = props as TStyledSetComponent;
 
 
     const BaseElement = !!as ? as : isStyledComponent(StyledBase) ? StyledBase : 'div';
