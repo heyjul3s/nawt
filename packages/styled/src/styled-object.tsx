@@ -17,11 +17,11 @@ import {
 } from 'styled-system';
 
 import type { Config, VariantArgs, styleFn } from 'styled-system';
-import type { CSSObject, StyledComponent } from 'styled-components';
-import type { TStyledObjectProps, TStyledObject } from './typings';
+import type { CSSObject } from 'styled-components';
+import type { TStyledElement, TStyledObjectProps, TStyledObject } from './typings';
 
 export function styledObject<Props = void, ThemeType = void>(
-  element: keyof JSX.IntrinsicElements | StyledComponent<keyof JSX.IntrinsicElements, any, any, keyof any>,
+  element: TStyledElement,
   styles: CSSObject,
   props: Partial<TStyledObjectProps> = { attrs: {}, compose: [], system: {}, variants: {} }
 ): TStyledObject<Props, ThemeType> {
