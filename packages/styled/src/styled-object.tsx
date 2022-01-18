@@ -25,7 +25,9 @@ export function styledObject<Props = void, ThemeType = void>(
   styles: CSSObject,
   props: Partial<TStyledObjectProps> = { attrs: {}, compose: [], system: {}, variants: {} }
 ): TStyledObject<Props, ThemeType> {
-  return styled(element).attrs(props.attrs)(
+  const composition = props?.compose || [] as styleFn[]
+
+  return styled(element).attrs(props.attrs || {})(
     styles,
     compose(
       background,
@@ -37,7 +39,7 @@ export function styledObject<Props = void, ThemeType = void>(
       shadow,
       space,
       typography,
-      ...props.compose as styleFn[]
+      ...composition
     ),
     !isEmpty(props?.variants) && variant(props.variants as VariantArgs),
     !isEmpty(props?.system) && system(props.system as Config)
