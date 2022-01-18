@@ -1,26 +1,12 @@
 import isEmpty from 'lodash.isempty';
-import { styleFn } from 'styled-system';
 import { isStyledComponent } from 'styled-components';
 import { styledObject } from './styled-object';
 
-import type { VariantArgs, Config} from 'styled-system'
+import type { TStyledObject, TStyledSetComponent, TStyledSetConfig } from './typings';
 
-export type TStyledSetConfig = Partial<{
-  baseStyles: any;
-  components: any;
-  attrs: any;
-  as: keyof JSX.IntrinsicElements;
-  compose: styleFn[];
-  variants: VariantArgs;
-  system: Config;
-}>;
-
-export function styledSet(
-  config: TStyledSetConfig,
-  baseElement: keyof JSX.IntrinsicElements = 'div'
-) {
-  const StyledBase = !isEmpty(config.baseStyles)
-    ? styledObject(baseElement, config.baseStyles)
+export function styledSet(config: TStyledSetConfig) {
+  const StyledBase = !isEmpty(config.base)
+    ? styledObject(config.base?.element || 'div', config.base?.styles || {})
     : void 0;
 
   return Object.entries(config.components).reduce((components, config) => {
@@ -28,23 +14,24 @@ export function styledSet(
 
     const {
       as = 'div',
-      compose,
-      variants,
-      system,
-      attrs,
+      compose = [],
+      variants = {},
+      system = {},
+      attrs = {},
       ...styles
-    } = props as TStyledSetConfig;
+    } = props as TStyledSetComponent;
 
-    const BaseElement = isStyledComponent(StyledBase) ? StyledBase : as;
+
+    const BaseElement = !!as ? as : isStyledComponent(StyledBase) ? StyledBase : 'div';
 
     return {
       ...components,
       [name]: styledObject(BaseElement, {...styles}, {
-        attrs,
         compose,
         variants,
-        system
+        system,
+        attrs
       })
     };
-  }, {});
+  }, {} as Record<string, TStyledObject>);
 }

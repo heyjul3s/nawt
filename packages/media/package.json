@@ -16,12 +16,17 @@
   "license": "MIT",
   "devDependencies": {
     "@artefakt/bundler": "workspace:0.1.0",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
   },
   "dependencies": {
+    "lodash.isempty": "^4.4.0",
     "lodash.partition": "^4.6.0"
   }
 }

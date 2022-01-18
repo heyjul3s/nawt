@@ -1,14 +1,7 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import { FlexColBase } from './FlexColBase';
-
-type TFlexColProps = Partial<{
-  totalColumns: number;
-  columnSize: any;
-  offset: any;
-  gutterWidth: any;
-  gap: any;
-}>;
+import type { TFlexColProps } from './typings';
 
 export const FlexCol = styled(FlexColBase)<TFlexColProps>(props => {
   const baseColumnWidth = getColumnWidth(props.totalColumns);

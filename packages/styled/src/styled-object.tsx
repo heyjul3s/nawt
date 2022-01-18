@@ -17,15 +17,17 @@ import {
 } from 'styled-system';
 
 import type { Config, VariantArgs, styleFn } from 'styled-system';
-import type { CSSObject, StyledComponent } from 'styled-components';
-import type { TStyledObjectProps, TStyledObject } from './typings';
+import type { CSSObject } from 'styled-components';
+import type { TStyledElement, TStyledObjectProps, TStyledObject } from './typings';
 
 export function styledObject<Props = void, ThemeType = void>(
-  element: keyof JSX.IntrinsicElements | StyledComponent<keyof JSX.IntrinsicElements, any, any, keyof any>,
+  element: TStyledElement,
   styles: CSSObject,
   props: Partial<TStyledObjectProps> = { attrs: {}, compose: [], system: {}, variants: {} }
 ): TStyledObject<Props, ThemeType> {
-  return styled(element).attrs(props.attrs)(
+  const composition = props?.compose || [] as styleFn[]
+
+  return styled(element).attrs(props.attrs || {})(
     styles,
     compose(
       background,
@@ -37,7 +39,7 @@ export function styledObject<Props = void, ThemeType = void>(
       shadow,
       space,
       typography,
-      ...props.compose as styleFn[]
+      ...composition
     ),
     !isEmpty(props?.variants) && variant(props.variants as VariantArgs),
     !isEmpty(props?.system) && system(props.system as Config)

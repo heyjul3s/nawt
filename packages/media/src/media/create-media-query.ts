@@ -6,16 +6,16 @@ import { mediaTypeQueries } from '../enums';
 
 import type { TCreateMediaQueries, TMediaTypes, TToken } from '../typings';
 
-export function createMediaQueries(queries: TCreateMediaQueries[]) {
+export function createMqs(queries: TCreateMediaQueries[]) {
   return queries.reduce((mediaQueries, { key, query, mediaType}) => {
     return {
       ...mediaQueries,
-      [key]: createMediaQuery(query, mediaType)
+      [key]: createMq(query, mediaType)
     }
   }, {});
 }
 
-export function createMediaQuery(query: string, mediaType?: TMediaTypes): TToken[] | string {
+export function createMq(query: string, mediaType?: TMediaTypes): string {
   if (!query) {
     return '';
   }

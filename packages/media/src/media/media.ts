@@ -1,9 +1,10 @@
 import { css } from 'styled-components';
-import { createMediaQuery } from './create-media-query';
+import { createMq } from './create-media-query';
+import type { CSSObject } from 'styled-components'
 import type { TMediaTypes } from '../typings';
 
-export function media(query: string, mediaType: TMediaTypes) {
-  const mediaQuery = createMediaQuery(query, mediaType);
+export function mq(query: string, mediaType?: TMediaTypes) {
+  const mediaQuery = createMq(query, mediaType);
 
   return (first, ...interpolations) =>
     !!mediaQuery
@@ -13,4 +14,12 @@ export function media(query: string, mediaType: TMediaTypes) {
           }
         `
       : css(first, ...interpolations);
+}
+
+export function mqo(query: string, styles: CSSObject, mediaType: TMediaTypes = 'screen') {
+  const mediaQuery = createMq(query, mediaType);
+
+  return {
+    [mediaQuery]: styles
+  }
 }

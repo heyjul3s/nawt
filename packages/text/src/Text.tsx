@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { styledObject } from '@artefakt/styled';
 
 import type { Config } from 'styled-system';
@@ -19,16 +19,18 @@ export const TextBase: TStyledObject<TTypographyProps> = styledObject( 'p', {}, 
 
 export const Text = styled(TextBase)<TTextProps>((props) => {
   const textOverflow = props?.textOverflow || 'ellipsis';
+  const noOfLines = !!props?.noOfLines ? String(props.noOfLines)?.match(/(\d+)/)?.[0] : void 0;
 
   return {
     ...(!!props.trim && {
       textOverflow: textOverflow,
-      overflow: 'hidden'
+      overflow: 'hidden',
+      whiteSpace: 'nowrap'
     }),
-    ...(!!props.noOfLines && {
+    ...(!!noOfLines && {
       display: '-webkit-box',
-      lineClamp: props.noOfLines,
-      boxOrient: 'vertical',
+      '-webkit-line-clamp': noOfLines,
+      '-webkit-box-orient': 'vertical',
       whiteSpace: 'normal',
       textOverflow: textOverflow,
       overflow: 'hidden'

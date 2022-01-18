@@ -1,6 +1,6 @@
 # Untitled
 
-This is a library that aims to provide you with a little more extra functionality when attempting to create and build your own design system with styled-components.
+This is a library that aims to provide just enough functionality to help in the creation and development of a custom design system with styled-components.
 
 The following utilties are currently available and possibly, more to come:
 

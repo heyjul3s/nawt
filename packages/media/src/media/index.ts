@@ -1,2 +1,2 @@
-export { media } from './media';
-export { createMediaQuery } from './create-media-query';
+export { mq, mqo } from './media';
+export { createMq, createMqs } from './create-media-query';

@@ -5,7 +5,7 @@ import css from '@styled-system/css';
 type TGridProps = Partial<{
   columnWidth: string | string[];
   columnLength: number | number[];
-  gap: string | string;
+  gap: string | string[];
 }>;
 
 export const Grid = styled(GridBase)<TGridProps>(props => {
