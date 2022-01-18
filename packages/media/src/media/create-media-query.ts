@@ -15,7 +15,7 @@ export function createMqs(queries: TCreateMediaQueries[]) {
   }, {});
 }
 
-export function createMq(query: string, mediaType?: TMediaTypes): TToken[] | string {
+export function createMq(query: string, mediaType?: TMediaTypes): string {
   if (!query) {
     return '';
   }

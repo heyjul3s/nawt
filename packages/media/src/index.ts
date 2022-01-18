@@ -1,33 +1,34 @@
-import { media } from './media';
+import { mq } from './media';
 
-export { media };
+export { mq };
+export { mqo } from './media';
 
-export function mediaAll(query: string) {
-  return media(query, 'all');
+export function mqAll(query: string) {
+  return mq(query, 'all');
 }
 
-export function mediaScreen(query: string) {
-  return media(query, 'screen');
+export function mqScreen(query: string) {
+  return mq(query, 'screen');
 }
 
-export function mediaPrint(query: string) {
-  return media(query, 'print');
+export function mqPrint(query: string) {
+  return mq(query, 'print');
 }
 
-export function mediaSpeech(query: string) {
-  return media(query, 'speech');
+export function mqSpeech(query: string) {
+  return mq(query, 'speech');
 }
 
-export function mediaOnlyScreen(query: string) {
-  return media(query, 'onlyScreen');
+export function mqOnlyScreen(query: string) {
+  return mq(query, 'onlyScreen');
 }
 
-export function mediaOnlyPrint(query: string) {
-  return media(query, 'onlyPrint');
+export function mqOnlyPrint(query: string) {
+  return mq(query, 'onlyPrint');
 }
 
-export function mediaOnlySpeech(query: string) {
-  return media(query, 'onlySpeech');
+export function mqOnlySpeech(query: string) {
+  return mq(query, 'onlySpeech');
 }
 
-export { createMediaQuery } from './media';
+export { createMq } from './media';
