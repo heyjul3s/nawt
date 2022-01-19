@@ -3,10 +3,15 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
+    "lint:es": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "lint:es-fix": "eslint --fix --ignore-path .gitignore --ext .js,.ts,.tsx .",
     "test": "jest --config jest.config.js",
     "test-watch": "jest --config jest.config.js --watch",
+    "test:ci": "jest --ci --reporters='default' --reporters='./github-actions-reporter'",
     "storybook": "start-storybook --ci -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "ci:version": "pnpm changeset version",
+    "ci:publish": "pnpm publish -r"
   },
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
@@ -17,7 +22,7 @@
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.16.4",
     "@changesets/changelog-github": "^0.4.1",
-    "@changesets/cli": "^2.18.0",
+    "@changesets/cli": "^2.18.1",
     "@storybook/addon-actions": "^6.4.0",
     "@storybook/addon-essentials": "^6.4.0",
     "@storybook/addon-links": "^6.4.0",
