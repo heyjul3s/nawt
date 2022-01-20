@@ -4,3 +4,6 @@ node_modules
 __mocks__
 __tests__
 *.stories.tsx
+.pnpm-store
+.changeset
+.husky
