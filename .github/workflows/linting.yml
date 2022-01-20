@@ -14,26 +14,29 @@ jobs:
   linting:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [16]
+        
     steps:
       - name: Checkout code repository
         uses: actions/checkout@v2
 
-      - name: Set Up Node.js
+      - name: Checkout Code Repository
+        uses: actions/checkout@v2
+
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.20.3
+
+      - name: Set Up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
 
-      - name: Install PNPM
-        run: npm i pnpm@latest -g
-
-      - name: Setup npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-
-      - name: Setup PNPM config
-        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
-
-      - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+      - name: Install Dependencies
+        run: pnpm install
 
       - name: Get File Changes
         id: get_files_changed
