@@ -34,7 +34,7 @@ jobs:
         run: pnpm install
 
       - name: Run Jest
-        run: pnpm test
+        run: pnpm test:jest
 
       - name: Tests ✅
         if: ${{ success() }}
@@ -63,4 +63,3 @@ jobs:
             "description": "Tests failed",
             "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           }'
-          
