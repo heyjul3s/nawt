@@ -3,6 +3,7 @@ name: Linting
 on:
   push:
     branches: [master, main, develop]
+    
   pull_request:
     branches: [master, main, develop]
 
@@ -17,7 +18,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16]
-        
+
     steps:
       - name: Checkout code repository
         uses: actions/checkout@v2
