@@ -1,4 +1,4 @@
-import { styledObject } from '@artefakt/styled';
+import { styledObject } from '../../styled/src';
 
 import {
   alignSelf,
