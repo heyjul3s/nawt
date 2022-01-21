@@ -2,19 +2,23 @@
   "name": "@artefakt/colors",
   "version": "0.1.0",
   "description": "Various color utilities with color value conversion functions and more",
-  "main": "dist/colors.js",
-  "module": "dist/colors.esm.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --passWithNoTests --colors",
+    "prettier": "prettier --check . '!dist/*'",
+    "prettier:fix": "prettier --write . '!dist/*'",
+    "lint:es": "eslint --ignore-pattern '/dist/' . --ext .ts,.tsx .",
+    "lint:es-fix": "eslint --ignore-pattern '/dist/' --fix --ext .js,.ts,.tsx .",
     "build": "bundler"
   },
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "devDependencies": {
     "@artefakt/bundler": "workspace:0.1.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/colors.js",
+    "module": "dist/colors.esm.js",
+    "typings": "dist/index.d.ts"
   }
 }

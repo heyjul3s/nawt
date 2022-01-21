@@ -12,7 +12,7 @@ describe('RGBtoHex', () => {
 
 describe('extractRgbValue', () => {
   it('should return UNDEFINED if provided an invalid value', () => {
-    expect(extractRgbValue('')).toEqual(void 0);
+    expect(extractRgbValue('')).toEqual([]);
   });
 
   it('should return an array of strings', () => {

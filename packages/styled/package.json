@@ -3,20 +3,20 @@
   "version": "0.1.0",
   "description": "A small library of Styled Components utilities",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --passWithNoTests --colors",
+    "prettier": "prettier --check . '!dist/*'",
+    "prettier:fix": "prettier --write . '!dist/*'",
+    "lint:es": "eslint --ignore-pattern '/dist/' . --ext .ts,.tsx .",
+    "lint:es-fix": "eslint --ignore-pattern '/dist/' --fix --ext .js,.ts,.tsx .",
     "build": "bundler"
   },
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
-  "main": "dist/styled.js",
-  "module": "dist/styled.esm.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "peerDependencies": {
-    "styled-components": ">=5.2.1",
-    "styled-system": ">=5.1.5"
+  "publishConfig": {
+    "access" : "public",
+    "main" : "dist/styled.js",
+    "module": "dist/styled.esm.js",
+    "typings": "dist/index.d.ts"
   },
   "devDependencies": {
     "@artefakt/bundler": "workspace:0.1.0",

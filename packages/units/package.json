@@ -2,18 +2,22 @@
   "name": "@artefakt/units",
   "version": "0.1.0",
   "description": "A utility library for CSS unit conversions.",
-  "main": "dist/units.js",
-  "module": "dist/units.esm.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --passWithNoTests --colors",
+    "prettier": "prettier --check . '!dist/*'",
+    "prettier:fix": "prettier --write . '!dist/*'",
+    "lint:es": "eslint --ignore-pattern '/dist/' . --ext .ts,.tsx .",
+    "lint:es-fix": "eslint --ignore-pattern '/dist/' --fix --ext .js,.ts,.tsx .",
     "build": "bundler"
   },
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
+  "publishConfig": {
+    "access" : "public",
+    "main" : "dist/units.js",
+    "module": "dist/units.esm.js",
+    "typings": "dist/index.d.ts"
+  },
   "devDependencies": {
     "@artefakt/bundler": "workspace:0.1.0"
   }

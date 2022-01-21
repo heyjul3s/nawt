@@ -1,4 +1,4 @@
-# @artefakt/flex
+# @nawt/flex
 
 A flex-grid Styled Component with the option to define the number of columns for your flex grid.
 
