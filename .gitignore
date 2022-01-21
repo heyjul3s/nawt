@@ -1,5 +1,4 @@
 node_modules
-.docz
 .pnp
 .pnp.js
 dist
@@ -10,5 +9,5 @@ npm-debug.log*
 .pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-lerna-debug.log
 .env
+.vscode
