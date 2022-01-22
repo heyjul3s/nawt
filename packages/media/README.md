@@ -88,6 +88,42 @@ type TMediaTypes = {
 
 ---
 
+### **`mqo`**(query: `string`, styles: `CSSObject`, mediaType: `TMediaTypes`)
+
+An object based version of `mq` with the primary differences being styles will need to be passed as an object and invocation of `mqo` is required to be spread into the styled component object.
+
+```ts
+import { mqo } from '@nawt/media';
+import styled from 'styled-components';
+
+// Via object styles
+export const Button = styled.button(() => ({
+  display: 'flex',
+  background: 'red',
+  ...mqo('width >= 1200px', {
+    display: 'none'
+  })
+}));
+```
+
+Query wise, functionally, is exactly the same as `mq` so refer to `mq` above for formulating media queries. Note that for `mqo`, by default the `mediaType` argument is set to `screen`.
+
+### Typings
+
+```ts
+type TMediaTypes = {
+  | 'all'
+  | 'screen'
+  | 'onlyScreen'
+  | 'speech'
+  | 'onlySpeech'
+  | 'print'
+  | 'onlyPrint';
+}
+```
+
+---
+
 ### **`createMq`**(query: `string`, mediaType?: `TMediaTypes`)
 
 This function accepts a single query string and parses it to a media query string.
