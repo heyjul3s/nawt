@@ -1,16 +1,31 @@
-# Untitled
+# Nawt
 
-This is a library that aims to provide just enough functionality to help in the creation and development of a custom design system with styled-components.
+A minimal UI library to help in creating custom design systems with Styled Components. This library attempts to give you more control in regards to direction and functionality by attempting to keep it minimal thus, removing the need to inherit unnecessary bloat and or styles.
 
-The following utilties are currently available and possibly, more to come:
+To install,
 
-| Package | Description                                                                                         |
-| ------- | --------------------------------------------------------------------------------------------------- |
-| block   | generic block component that used as a building block for styled components                         |
-| colors  | a small collection of color value conversion utilities                                              |
-| flex    | flexbox grid Styled Component with the flexibility of assigning your own number of columns          |
-| grid    | grid Styled Component with template column definitions                                              |
-| media   | media query utility with query rule constants available                                             |
-| styled  | helps with creation of styled components via object definitions                                     |
-| text    | comprises of a base text component, font weight constants and component creation and other utilties |
-| units   | a small collection of unit conversion utilties                                                      |
+```sh
+# Yarn
+yarn add nawt styled-components styled-system @types/styled-components @types/styled-system
+
+# NPM
+npm install nawt styled-components styled-system @types/styled-components @types/styled-system
+
+# PNPM
+pnpm add nawt styled-components styled-system @types/styled-components @types/styled-system
+```
+
+The following utilties are currently available and you can find further instructions/documentation of each package here by clicking on the package name in the table below.
+
+| Package                             | Description                                                                                |
+| ----------------------------------- | ------------------------------------------------------------------------------------------ |
+| [block](packages/block/README.md)   | generic block component that is used as a building block                                   |
+| [colors](packages/colors/README.md) | a small collection of color value conversion utilities                                     |
+| [flex](packages/flex/README.md)     | flexbox grid Styled Component with the flexibility of assigning your own number of columns |
+| [grid](packages/grid/README.md)     | grid Styled Component with auto template column definitions                                |
+| [media](packages/media/README.md)   | media query utility with query rule constants available                                    |
+| [styled](packages/styled/README.md) | helps with creation of styled components via object definitions                            |
+| [text](packages/text/README.md)     | a text component with capability of defining text truncation                               |
+| [units](packages/units/README.md)   | a collection of unit conversion utilties                                                   |
+
+More to come.
