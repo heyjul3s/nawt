@@ -1,8 +1,9 @@
 import { flexbox, grid } from 'styled-system';
 import { styledObject } from '../../styled/src';
 
-import type { Config } from 'styled-system';
+import type { Config, FlexProps, GridProps } from 'styled-system';
 import type { TStyledObject } from '../../styled/src';
+import type { TTypographyProps } from './typings';
 
 export const typographyStyleProps: Config = {
   textDecoration: true,
@@ -14,4 +15,4 @@ export const typographyStyleProps: Config = {
   wordSpacing: true
 };
 
-export const Block: TStyledObject = styledObject( 'div', {}, { compose: [flexbox, grid], system: typographyStyleProps });
+export const Block: TStyledObject<FlexProps & GridProps & TTypographyProps> = styledObject( 'div', {}, { compose: [flexbox, grid], system: typographyStyleProps });
