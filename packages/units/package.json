@@ -1,5 +1,5 @@
 {
-  "name": "@artefakt/units",
+  "name": "@nawt/units",
   "version": "0.1.0",
   "description": "A utility library for CSS unit conversions.",
   "scripts": {
@@ -8,7 +8,7 @@
     "prettier:fix": "prettier --write . '!dist/*'",
     "lint:es": "eslint --ignore-pattern '/dist/' . --ext .ts,.tsx .",
     "lint:es-fix": "eslint --ignore-pattern '/dist/' --fix --ext .js,.ts,.tsx .",
-    "build": "bundler"
+    "build": "rimraf dist && bundler"
   },
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
@@ -19,6 +19,6 @@
     "typings": "dist/index.d.ts"
   },
   "devDependencies": {
-    "@artefakt/bundler": "workspace:0.1.0"
+    "@nawt/bundler": "workspace:0.1.0"
   }
 }

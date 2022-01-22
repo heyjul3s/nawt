@@ -1,4 +1,4 @@
-# @artefakt/grid
+# @nawt/grid
 
 A simple grid Styled Component that allows for easy setting of repeatable columns.
 
@@ -6,13 +6,13 @@ A simple grid Styled Component that allows for easy setting of repeatable column
 
 ```sh
 # For NPM
-npm install @artefakt/grid
+npm install @nawt/grid
 
 # For Yarn
-yarn add @artefakt/grid
+yarn add @nawt/grid
 
 # For PNPM
-pnpm install @artefakt/grid
+pnpm install @nawt/grid
 ```
 
 ## **API**
@@ -28,7 +28,7 @@ The Grid component.
 | `gap`          | `1em`         | `string \| string[]` | Defines the gap width.                                                                                            |
 
 ```ts
-import { Grid, GridItem } from '@artefakt/flex';
+import { Grid, GridItem } from '@nawt/flex';
 
 // With columnWidths
 export const MyFlexGrid = () => {
@@ -71,7 +71,7 @@ export const MyFlexGrid = () => {
 As its name implies, this is the child component of the Grid component with several system props included. Typical usage is as follows
 
 ```ts
-import { Grid, GridItem } from '@artefakt/flex';
+import { Grid, GridItem } from '@nawt/flex';
 
 export const MyFlexGrid = () => {
   return (

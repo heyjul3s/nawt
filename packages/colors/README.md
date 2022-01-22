@@ -1,4 +1,4 @@
-# @artefakt/colors
+# @nawt/colors
 
 A collection of colour value conversion utilities and other colour related functions.
 

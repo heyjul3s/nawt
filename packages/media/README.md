@@ -1,4 +1,4 @@
-# @artefakt/media
+# @nawt/media
 
 A media query utility for Styled Components. This was created to introduce some programming operators into the mix and also an attempt to make writing media queries just a little bit less tedious for Styled Components.
 
@@ -6,13 +6,13 @@ A media query utility for Styled Components. This was created to introduce some 
 
 ```sh
 # For NPM
-npm install @artefakt/media
+npm install @nawt/media
 
 # For Yarn
-yarn add @artefakt/media
+yarn add @nawt/media
 
 # For PNPM
-pnpm install @artefakt/media
+pnpm install @nawt/media
 ```
 
 ---
@@ -24,7 +24,7 @@ pnpm install @artefakt/media
 Primary function to help in writing styles with media queries.
 
 ```ts
-import { mq } from '@artefakt/media';
+import { mq } from '@nawt/media';
 import styled from 'styled-components';
 
 // Via string literal styling
@@ -71,6 +71,42 @@ mq('(height >= 680px)', 'screen');
 ```
 
 As you may have noticed from the above example, certain keywords return a certain media query string eg. landscape, portrait, screen, etc. [Here](#keywords-and-operators) is a full list of currently available keywords or scroll down to the **Keywords and Operators** section.
+
+### Typings
+
+```ts
+type TMediaTypes = {
+  | 'all'
+  | 'screen'
+  | 'onlyScreen'
+  | 'speech'
+  | 'onlySpeech'
+  | 'print'
+  | 'onlyPrint';
+}
+```
+
+---
+
+### **`mqo`**(query: `string`, styles: `CSSObject`, mediaType: `TMediaTypes`)
+
+An object based version of `mq` with the primary differences being styles will need to be passed as an object and invocation of `mqo` is required to be spread into the styled component object.
+
+```ts
+import { mqo } from '@nawt/media';
+import styled from 'styled-components';
+
+// Via object styles
+export const Button = styled.button(() => ({
+  display: 'flex',
+  background: 'red',
+  ...mqo('width >= 1200px', {
+    display: 'none'
+  })
+}));
+```
+
+Query wise, functionally, is exactly the same as `mq` so refer to `mq` above for formulating media queries. Note that for `mqo`, by default the `mediaType` argument is set to `screen`.
 
 ### Typings
 

@@ -1,4 +1,4 @@
-# @artefakt/styled
+# @nawt/styled
 
 Styled Components library with styledObject and styledSet utitlities for creation of Styled Components.
 
@@ -6,13 +6,13 @@ Styled Components library with styledObject and styledSet utitlities for creatio
 
 ```sh
 # For NPM
-npm install @artefakt/styled
+npm install @nawt/styled
 
 # For Yarn
-yarn add @artefakt/styled
+yarn add @nawt/styled
 
 # For PNPM
-pnpm install @artefakt/styled
+pnpm install @nawt/styled
 ```
 
 ## **API**
@@ -22,7 +22,7 @@ pnpm install @artefakt/styled
 A utility function to help create styled objects complemented with Styled System properties. As the function name implies, this function only accepts styles that are in object literal syntax.
 
 ```ts
-import { styledObject } from '@artefakt/styled';
+import { styledObject } from '@nawt/styled';
 
 // Basic creation of a styled component with styledObject
 export const MyStyledObject = styledObject('div', {
@@ -59,7 +59,7 @@ type TStyledObjectProps = {
 Similar to `styledObject` with the difference that this utility function creates bulk Styled Components as per the config that you provide.
 
 ```ts
-import { styledSet } from '@artefakt/styled';
+import { styledSet } from '@nawt/styled';
 
 export const { P, Meta } = styledSet({
   {

@@ -2,6 +2,6 @@ const baseConfig = require('../../jest.config.packages.js');
 
 module.exports = {
   ...baseConfig,
-  name: '@artefakt/grid',
+  name: '@nawt/grid',
   displayName: 'Grid'
 }

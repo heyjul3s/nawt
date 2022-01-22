@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { styledObject } from '@artefakt/styled';
+import { styledObject } from '../../styled/src';
 
 import type { Config } from 'styled-system';
-import type { TStyledObject } from '@artefakt/styled';
+import type { TStyledObject } from '../../styled/src';
 import type { TTypographyProps, TTextProps } from './typings';
 
 export const typographyStyleProps: Config = {
