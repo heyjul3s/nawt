@@ -1,12 +1,16 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@nawt/bundler': workspace:0.1.0
+  '@nawt/styled': workspace:0.1.0
   '@types/styled-components': ^5.1.15
   '@types/styled-system': ^5.1.13
   styled-components: ^5.3.3
   styled-system: ^5.1.5
 
 devDependencies:
+  '@nawt/bundler': link:../bundler
+  '@nawt/styled': link:../styled
   '@types/styled-components': 5.1.21
   '@types/styled-system': 5.1.15
   styled-components: 5.3.3
@@ -95,8 +99,8 @@ packages:
       js-tokens: 4.0.0
     dev: true
 
-  /@babel/parser/7.16.10:
-    resolution: {integrity: sha512-Sm/S9Or6nN8uiFsQU1yodyDW3MWXQhFeqzMPM+t8MJjM+pLsnFVxFZzkpXKvUXh+Gz9cbMoYYs484+Jw/NTEFQ==}
+  /@babel/parser/7.16.12:
+    resolution: {integrity: sha512-VfaV15po8RiZssrkPweyvbGVSe4x2y+aciFCgn0n0/SJMR22cwofRV1mtnJQYcSB1wUTaA/X1LnA3es66MCO5A==}
     engines: {node: '>=6.0.0'}
     hasBin: true
     dev: true
@@ -106,7 +110,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.16.7
-      '@babel/parser': 7.16.10
+      '@babel/parser': 7.16.12
       '@babel/types': 7.16.8
     dev: true
 
@@ -120,7 +124,7 @@ packages:
       '@babel/helper-function-name': 7.16.7
       '@babel/helper-hoist-variables': 7.16.7
       '@babel/helper-split-export-declaration': 7.16.7
-      '@babel/parser': 7.16.10
+      '@babel/parser': 7.16.12
       '@babel/types': 7.16.8
       debug: 4.3.3_supports-color@5.5.0
       globals: 11.12.0

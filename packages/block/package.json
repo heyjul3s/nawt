@@ -3,10 +3,18 @@
   "version": "0.1.0",
   "description": "Basic generic component block with predefined CSS props",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "prettier": "prettier --check . '!dist/*'",
+    "prettier:fix": "prettier --write . '!dist/*'",
+    "lint:es": "eslint --ignore-pattern '/dist/' . --ext .ts,.tsx .",
+    "lint:es-fix": "eslint --ignore-pattern '/dist/' --fix --ext .js,.ts,.tsx .",
+    "build": "rimraf dist && bundler"
+  },
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "devDependencies": {
+    "@nawt/bundler": "workspace:0.1.0",
+    "@nawt/styled": "workspace:0.1.0",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",
     "styled-components": "^5.3.3",
