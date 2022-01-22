@@ -1,5 +1,5 @@
 {
-  "name": "@artefakt/grid",
+  "name": "@nawt/grid",
   "version": "0.1.0",
   "description": "A component for quickly setting grid columns with capbility to define template auto columns.",
   "scripts": {
@@ -8,7 +8,7 @@
     "prettier:fix": "prettier --write . '!dist/*'",
     "lint:es": "eslint --ignore-pattern '/dist/' . --ext .ts,.tsx .",
     "lint:es-fix": "eslint --ignore-pattern '/dist/' --fix --ext .js,.ts,.tsx .",
-    "build": "bundler"
+    "build": "rimraf dist && bundler"
   },
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
@@ -20,8 +20,8 @@
   },
   "devDependencies": {
     "@testing-library/react": "^12.1.2",
-    "@artefakt/bundler": "workspace:0.1.0",
-    "@artefakt/styled": "workspace:0.1.0",
+    "@nawt/bundler": "workspace:0.1.0",
+    "@nawt/styled": "workspace:0.1.0",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",
     "styled-components": "^5.3.3",

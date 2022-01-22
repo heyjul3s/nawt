@@ -1,4 +1,4 @@
-# @artefakt/media
+# @nawt/media
 
 A media query utility for Styled Components. This was created to introduce some programming operators into the mix and also an attempt to make writing media queries just a little bit less tedious for Styled Components.
 
@@ -6,13 +6,13 @@ A media query utility for Styled Components. This was created to introduce some 
 
 ```sh
 # For NPM
-npm install @artefakt/media
+npm install @nawt/media
 
 # For Yarn
-yarn add @artefakt/media
+yarn add @nawt/media
 
 # For PNPM
-pnpm install @artefakt/media
+pnpm install @nawt/media
 ```
 
 ---
@@ -24,7 +24,7 @@ pnpm install @artefakt/media
 Primary function to help in writing styles with media queries.
 
 ```ts
-import { mq } from '@artefakt/media';
+import { mq } from '@nawt/media';
 import styled from 'styled-components';
 
 // Via string literal styling

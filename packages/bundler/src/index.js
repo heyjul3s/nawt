@@ -10,7 +10,7 @@ const { src, name, dependencies, peerDependencies } = require(path.join(
   'package.json'
 ));
 
-const outFileName = name.replace('@artefakt/', '');
+const outFileName = name.replace('@nawt/', '');
 const DIR_PATH = path.resolve.bind(null, process.cwd());
 
 const dependencyKeys = !!dependencies ? Object.keys(dependencies) : [];

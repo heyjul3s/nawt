@@ -1,5 +1,5 @@
 {
-  "name": "@artefakt/block",
+  "name": "@nawt/block",
   "version": "0.1.0",
   "description": "Basic generic component block with predefined CSS props",
   "main": "index.js",

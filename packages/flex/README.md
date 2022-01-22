@@ -6,13 +6,13 @@ A flex-grid Styled Component with the option to define the number of columns for
 
 ```sh
 # For NPM
-npm install @artefakt/flex
+npm install @nawt/flex
 
 # For Yarn
-yarn add @artefakt/flex
+yarn add @nawt/flex
 
 # For PNPM
-pnpm install @artefakt/flex
+pnpm install @nawt/flex
 ```
 
 ## **API**
@@ -26,7 +26,7 @@ Typically used in lieu with FlexCol, you can also reverse the order of items wit
 | `isReverse` | `false`       | `boolean` | Defines whether to reverse item order |
 
 ```ts
-import { FlexRow, FlexCol } from '@artefakt/flex';
+import { FlexRow, FlexCol } from '@nawt/flex';
 
 // Typical FlexRow usage
 export const MyFlexGrid = () => {
@@ -68,7 +68,7 @@ Staple flex column component where you can define the following:
 Typical usage is as follows
 
 ```ts
-import { FlexRow, FlexCol } from '@artefakt/flex';
+import { FlexRow, FlexCol } from '@nawt/flex';
 
 // Typical usage of FlexCol
 export const MyFlexGrid = () => {
@@ -104,7 +104,7 @@ export const MyOffsetFlexGrid = () => {
 A custom total columns can be used as the basis for columnSize. This is to allow for a bit more flexibility to accommodate designs. Currently, it is required to create a wrapper for it for the sake of not repeating it everytime you need it.
 
 ```ts
-import { FlexRow, FlexCol } from '@artefakt/flex';
+import { FlexRow, FlexCol } from '@nawt/flex';
 
 // Usage with totalColumns property, say a total of 16 columns as basis is required
 export const Col = ({ children, totalColumns = 16 }) => {

@@ -1,7 +1,7 @@
 {
-  "name": "@artefakt/bundler",
+  "name": "@nawt/bundler",
   "version": "0.1.0",
-  "description": "artefakt bundler",
+  "description": "nawt bundler",
   "main": "index.js",
   "bin": {
     "bundler": "./src/index.js"

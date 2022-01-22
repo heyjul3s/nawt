@@ -1,4 +1,4 @@
-# @artefakt/units
+# @nawt/units
 
 A library for unit conversion and other unit related utilities.
 
@@ -6,13 +6,13 @@ A library for unit conversion and other unit related utilities.
 
 ```sh
 # For NPM
-npm install @artefakt/units
+npm install @nawt/units
 
 # For Yarn
-yarn add @artefakt/units
+yarn add @nawt/units
 
 # For PNPM
-pnpm install @artefakt/units
+pnpm install @nawt/units
 ```
 
 ## **API**
@@ -22,7 +22,7 @@ pnpm install @artefakt/units
 Converts px to em string.
 
 ```ts
-import { pxToEm } from '@artefakt/units';
+import { pxToEm } from '@nawt/units';
 
 pxToEm('48px'); // returns 3em
 ```
@@ -34,7 +34,7 @@ pxToEm('48px'); // returns 3em
 Converts px to rem string.
 
 ```ts
-import { pxToRem } from '@artefakt/units';
+import { pxToRem } from '@nawt/units';
 
 pxToRem('48px'); // returns 3rem
 ```
@@ -46,7 +46,7 @@ pxToRem('48px'); // returns 3rem
 Converts em to px string.
 
 ```ts
-import { emToPx } from '@artefakt/units';
+import { emToPx } from '@nawt/units';
 
 emToPx('3em'); // returns 48px
 ```
@@ -58,7 +58,7 @@ emToPx('3em'); // returns 48px
 Converts em to px string.
 
 ```ts
-import { remToPx } from '@artefakt/units';
+import { remToPx } from '@nawt/units';
 
 remToPx('3em'); // returns 48px
 ```
