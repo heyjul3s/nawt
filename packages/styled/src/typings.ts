@@ -7,20 +7,34 @@ import type {
   BorderProps,
   ColorProps,
   DisplayProps,
+  FlexProps,
+  GridProps,
   LayoutProps,
   PositionProps,
   ShadowProps,
   SpaceProps,
-  TypographyProps,
-} from 'styled-system'
+  TypographyProps
+} from 'styled-system';
 
 export type TCSSObjectWithScale = CSS.Properties<string | number | Scale>;
 export type TCSSPseudos = { [K in CSS.Pseudos]?: TCSSObjectWithScale };
 export type TScalableCSSObject = TCSSObjectWithScale & TCSSPseudos;
 
-export type TBaseProps = BackgroundProps & BorderProps & ColorProps & DisplayProps & LayoutProps & PositionProps & ShadowProps & SpaceProps & TypographyProps;
+export type TBaseProps = BackgroundProps &
+  BorderProps &
+  ColorProps &
+  DisplayProps &
+  FlexProps &
+  GridProps &
+  LayoutProps &
+  PositionProps &
+  ShadowProps &
+  SpaceProps &
+  TypographyProps;
 
-export type TStyledElement = keyof JSX.IntrinsicElements | StyledComponent<keyof JSX.IntrinsicElements, any, any, keyof any>
+export type TStyledElement =
+  | keyof JSX.IntrinsicElements
+  | StyledComponent<keyof JSX.IntrinsicElements, any, any, keyof any>;
 
 export type TStyledObjectProps = {
   attrs: any;
@@ -34,12 +48,12 @@ export type TStyledObject<Props = void, ThemeType = void> = StyledComponent<
   ThemeType | any,
   Props | TBaseProps | any,
   keyof any
->
+>;
 
 export type TStyledSetConfig = {
   base: {
     styles: CSSObject;
-    element: keyof JSX.IntrinsicElements
+    element: keyof JSX.IntrinsicElements;
   };
   components: Record<string, TStyledSetComponent>;
   attrs?: any;
@@ -54,4 +68,5 @@ export type TStyledSetComponent = Partial<{
   compose: styleFn[];
   variants: VariantArgs;
   system: Config;
-}> & CSSObject;
+}> &
+  CSSObject;

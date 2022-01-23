@@ -1,4 +1,4 @@
-import CSS from 'csstype';
+import * as CSS from 'csstype';
 import { Theme, RequiredTheme, ResponsiveValue } from 'styled-system';
 
 export interface ITextDecorationProps<ThemeType extends Theme = RequiredTheme> {

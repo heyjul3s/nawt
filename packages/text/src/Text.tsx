@@ -19,10 +19,7 @@ export const typographyStyleProps: Config = {
 export const TextBase: TStyledObject<TTypographyProps> = styledObject(
   'p',
   {},
-  {
-    compose: [flexbox, grid],
-    system: typographyStyleProps
-  }
+  { system: typographyStyleProps }
 );
 
 export const Text = styled(TextBase)<TTextProps>((props) => {

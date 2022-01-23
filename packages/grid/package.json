@@ -13,15 +13,15 @@
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "publishConfig": {
-    "access" : "public",
-    "main" : "dist/grid.js",
+    "access": "public",
+    "main": "dist/grid.js",
     "module": "dist/grid.esm.js",
     "typings": "dist/index.d.ts"
   },
   "devDependencies": {
-    "@testing-library/react": "^12.1.2",
+    "@nawt/block": "workspace:0.1.0",
     "@nawt/bundler": "workspace:0.1.0",
-    "@nawt/styled": "workspace:0.1.0",
+    "@testing-library/react": "^12.1.2",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",
     "styled-components": "^5.3.3",
