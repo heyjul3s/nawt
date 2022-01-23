@@ -15,4 +15,9 @@ export const typographyStyleProps: Config = {
   wordSpacing: true
 };
 
-export const Block: TStyledObject<FlexProps & GridProps & TTypographyProps> = styledObject( 'div', {}, { compose: [flexbox, grid], system: typographyStyleProps });
+export const Block: TStyledObject<FlexProps & GridProps & TTypographyProps> =
+  styledObject(
+    'div',
+    {},
+    { compose: [flexbox, grid], system: typographyStyleProps }
+  );
