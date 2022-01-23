@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { flexbox, grid } from 'styled-system';
 import { styledObject } from '../../styled/src';
 
 import type { Config } from 'styled-system';
