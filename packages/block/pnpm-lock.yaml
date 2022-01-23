@@ -5,6 +5,7 @@ specifiers:
   '@nawt/styled': workspace:0.1.0
   '@types/styled-components': ^5.1.15
   '@types/styled-system': ^5.1.13
+  csstype: ^3.0.10
   styled-components: ^5.3.3
   styled-system: ^5.1.5
 
@@ -13,6 +14,7 @@ devDependencies:
   '@nawt/styled': link:../styled
   '@types/styled-components': 5.1.21
   '@types/styled-system': 5.1.15
+  csstype: 3.0.10
   styled-components: 5.3.3
   styled-system: 5.1.5
 
