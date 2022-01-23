@@ -1,5 +1,12 @@
 import CSS from 'csstype';
-import { Theme, RequiredTheme, ResponsiveValue } from 'styled-system';
+
+import type {
+  FlexProps,
+  GridProps,
+  Theme,
+  RequiredTheme,
+  ResponsiveValue
+} from 'styled-system';
 
 export interface ITextDecorationProps<ThemeType extends Theme = RequiredTheme> {
   textDecoration?: ResponsiveValue<CSS.Property.TextDecoration, ThemeType>;
@@ -36,7 +43,9 @@ export type TTypographyProps =
   | ITextOverflowProps
   | IWhiteSpaceProps
   | IWordBreakProps
-  | IWordSpacingProps;
+  | IWordSpacingProps
+  | FlexProps
+  | GridProps;
 
 export type TTextProps = {
   trim?: boolean;

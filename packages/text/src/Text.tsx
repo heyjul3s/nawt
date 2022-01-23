@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { flexbox, grid } from 'styled-system';
 import { styledObject } from '../../styled/src';
 
 import type { Config } from 'styled-system';
@@ -15,11 +16,21 @@ export const typographyStyleProps: Config = {
   wordSpacing: true
 };
 
-export const TextBase: TStyledObject<TTypographyProps> = styledObject( 'p', {}, { system: typographyStyleProps });
+export const TextBase: TStyledObject<TTypographyProps> = styledObject(
+  'p',
+  {},
+  {
+    compose: [flexbox, grid],
+    system: typographyStyleProps
+  }
+);
 
 export const Text = styled(TextBase)<TTextProps>((props) => {
   const textOverflow = props?.textOverflow || 'ellipsis';
-  const noOfLines = !!props?.noOfLines ? String(props.noOfLines)?.match(/(\d+)/)?.[0] : void 0;
+
+  const noOfLines = !!props?.noOfLines
+    ? String(props.noOfLines)?.match(/(\d+)/)?.[0]
+    : void 0;
 
   return {
     ...(!!props.trim && {
@@ -35,5 +46,5 @@ export const Text = styled(TextBase)<TTextProps>((props) => {
       textOverflow: textOverflow,
       overflow: 'hidden'
     })
-  }
+  };
 });
