@@ -1,33 +1,3 @@
-import { styledObject } from '../../styled/src';
+import { Block } from '../../block/src';
 
-import {
-  alignSelf,
-  gridArea,
-  gridColumn,
-  gridRow,
-  justifySelf,
-  alignItems,
-  alignContent,
-  flex,
-  justifyItems,
-  justifyContent
-} from 'styled-system';
-
-export const GridItem = styledObject(
-  'div',
-  {},
-  {
-    compose: [
-      alignSelf,
-      gridArea,
-      gridColumn,
-      gridRow,
-      justifySelf,
-      alignItems,
-      alignContent,
-      flex,
-      justifyItems,
-      justifyContent
-    ]
-  }
-);
+export const GridItem = Block;

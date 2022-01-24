@@ -4,7 +4,7 @@
     "outDir": "dist",
     "rootDir": "."
   },
-  "references": [{ "path": "../styled/tsconfig.json" }],
+  "references": [{ "path": "../block/tsconfig.json" }],
   "include": ["src/*"],
-  "exclude": ["dist/*"],
+  "exclude": ["dist/*"]
 }

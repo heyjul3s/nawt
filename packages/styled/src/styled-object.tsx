@@ -7,25 +7,47 @@ import {
   border,
   color,
   display,
+  flexbox,
+  grid,
   layout,
   position,
   shadow,
   space,
   typography,
   variant,
-  system,
+  system
 } from 'styled-system';
 
 import type { Config, VariantArgs, styleFn } from 'styled-system';
 import type { CSSObject } from 'styled-components';
-import type { TStyledElement, TStyledObjectProps, TStyledObject } from './typings';
+
+import type {
+  TStyledElement,
+  TStyledObjectProps,
+  TStyledObject
+} from './typings';
+
+export const typographyStyleProps: Config = {
+  textDecoration: true,
+  textIndent: true,
+  textTransform: true,
+  textOverflow: true,
+  whiteSpace: true,
+  wordBreak: true,
+  wordSpacing: true
+};
 
 export function styledObject<Props = void, ThemeType = void>(
   element: TStyledElement,
   styles: CSSObject,
-  props: Partial<TStyledObjectProps> = { attrs: {}, compose: [], system: {}, variants: {} }
+  props: Partial<TStyledObjectProps> = {
+    attrs: {},
+    compose: [],
+    system: {},
+    variants: {}
+  }
 ): TStyledObject<Props, ThemeType> {
-  const composition = props?.compose || [] as styleFn[]
+  const composition = props?.compose || ([] as styleFn[]);
 
   return styled(element).attrs(props.attrs || {})(
     styles,
@@ -34,6 +56,8 @@ export function styledObject<Props = void, ThemeType = void>(
       border,
       color,
       display,
+      flexbox,
+      grid,
       layout,
       position,
       shadow,
@@ -42,6 +66,7 @@ export function styledObject<Props = void, ThemeType = void>(
       ...composition
     ),
     !isEmpty(props?.variants) && variant(props.variants as VariantArgs),
-    !isEmpty(props?.system) && system(props.system as Config)
+    !isEmpty(props?.system) &&
+      system({ ...typographyStyleProps, ...(props.system as Config) })
   );
 }
