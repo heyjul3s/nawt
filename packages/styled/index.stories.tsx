@@ -14,7 +14,7 @@ export function styledObjectBasicUsage() {
 }
 
 export function styledSetUsage() {
-  const { P, LargeP } = styledSet({
+  const { P, H1 } = styledSet({
     base: {
       styles: {
         color: 'black'
@@ -26,9 +26,9 @@ export function styledSetUsage() {
         lineHeight: '1.2',
         as: 'p'
       },
-      LargeP: {
+      H1: {
         lineHeight: '1.3',
-        as: 'p'
+        as: 'h1'
       }
     }
   });
@@ -36,7 +36,7 @@ export function styledSetUsage() {
   return (
     <>
       <P>Hello Paragraph!</P>
-      <LargeP>Hello Large Paragraph</LargeP>
+      <H1>Hello Large Paragraph</H1>
     </>
   );
 }
