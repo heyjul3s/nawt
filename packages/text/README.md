@@ -19,7 +19,7 @@ pnpm install @nawt/text
 
 ## **API**
 
-### <**`Text`** \/>
+### <**Text** \/>
 
 Text component with built-in text truncation capabilities. By default, renders as a `p` tag.
 

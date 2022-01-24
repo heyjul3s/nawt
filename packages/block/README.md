@@ -17,7 +17,7 @@ pnpm install @nawt/block
 
 ## **API**
 
-### <**`Block`** \/>
+### <**Block** \/>
 
 Basic Block component which comprises of the following styled-system properties
 

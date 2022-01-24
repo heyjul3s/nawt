@@ -4,7 +4,7 @@ A collection of colour value conversion utilities and other colour related funct
 
 ## **API**
 
-### **hexToRgb**(hex: string): string
+### **hexToRgb**(hex: `string`): `string`
 
 This function converts a hex colour value to rgb.
 
@@ -14,7 +14,7 @@ hexToRgb('#000'); // returns string 'rgb(0, 0, 0)'
 
 ---
 
-### **hexToRgba**(hex: string, alpha: number): string
+### **hexToRgba**(hex: `string`, alpha: `number`): `string`
 
 Similar to hexToRgb with the difference that this function also returns an alpha value.
 
@@ -24,7 +24,7 @@ hexToRgba('#000', 0.5); // returns string 'rgba(0, 0, 0, 0.5)'
 
 ---
 
-### **rgbToHex**(value: any): string
+### **rgbToHex**(value: `any`): `string`
 
 Converts a RGB colour values to a hex colour value.
 

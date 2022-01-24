@@ -19,7 +19,7 @@ pnpm install @nawt/media
 
 ## **API**
 
-### **`mq`**(query: `string`, mediaType: `TMediaTypes`)
+### **mq**(query: `string`, mediaType: `TMediaTypes`)
 
 Primary function to help in writing styles with media queries.
 
@@ -88,7 +88,7 @@ type TMediaTypes = {
 
 ---
 
-### **`mqo`**(query: `string`, styles: `CSSObject`, mediaType: `TMediaTypes`)
+### **mqo**(query: `string`, styles: `CSSObject`, mediaType: `TMediaTypes`)
 
 An object based version of `mq` with the primary differences being styles will need to be passed as an object and invocation of `mqo` is required to be spread into the styled component object.
 
@@ -124,7 +124,7 @@ type TMediaTypes = {
 
 ---
 
-### **`createMq`**(query: `string`, mediaType?: `TMediaTypes`)
+### **createMq**(query: `string`, mediaType?: `TMediaTypes`)
 
 This function accepts a single query string and parses it to a media query string.
 
@@ -152,7 +152,7 @@ type TMediaTypes = {
 
 ---
 
-### **`createMqs`**(queries: `TCreateMediaQueries[]`)
+### **createMqs**(queries: `TCreateMediaQueries[]`)
 
 This function accepts an array of objects with each describing a media query and returns an object with the parsed media queries in accordance to its assigned keys.
 
@@ -196,71 +196,71 @@ Below is a list of keywords and operators. Take note that "not", "only", "less t
 
 ### **Logical Operators**
 
-| Key    | Value |
-| :----- | :---- |
-| `&&`   | `and` |
-| `\|\|` | `,`   |
+| Key  | Value |
+| :--- | :---- |
+| &&   | and   |
+| \|\| | ,     |
 
 ### **Relational Operators**
 
-| Key  | Description                                     |
-| :--- | :---------------------------------------------- |
-| `>=` | `"more than or equal", denotes a mininum value` |
-| `<=` | `"less than or equal", denotes a maximum value` |
-| `==` | `"equal", denotes an is equal`                  |
+| Key | Description                                   |
+| :-- | :-------------------------------------------- |
+| >=  | "more than or equal", denotes a mininum value |
+| <=  | "less than or equal", denotes a maximum value |
+| ==  | "equal", denotes an is equal                  |
 
 ### **Media Types**
 
-| Key          | Value         |
-| :----------- | :------------ |
-| `all`        | `all`         |
-| `screen`     | `screen`      |
-| `onlyScreen` | `only screen` |
-| `speech`     | `speech`      |
-| `onlySpeech` | `only speech` |
-| `print`      | `print`       |
-| `onlyPrint`  | `only print`  |
+| Key        | Value       |
+| :--------- | :---------- |
+| all        | all         |
+| screen     | screen      |
+| onlyScreen | only screen |
+| speech     | speech      |
+| onlySpeech | only speech |
+| print      | print       |
+| onlyPrint  | only print  |
 
 ### **Media Input**
 
-| Key                | Value                 |
-| :----------------- | :-------------------- |
-| `anyHover`         | `any-hover: hover`    |
-| `anyHoverNone`     | `any-hover: none`     |
-| `hover`            | `hover: hover`        |
-| `hoverNone`        | `hover: none`         |
-| `anyPointerCoarse` | `any-pointer: coarse` |
-| `anyPointerFine`   | `any-pointer: fine`   |
-| `anyPointerNone`   | `any-pointer: none`   |
-| `pointerCoarse`    | `pointer: coarse`     |
-| `pointerFine`      | `pointer: fine`       |
-| `pointerNone`      | `pointer: none`       |
+| Key              | Value               |
+| :--------------- | :------------------ |
+| anyHover         | any-hover: hover    |
+| anyHoverNone     | any-hover: none     |
+| hover            | hover: hover        |
+| hoverNone        | hover: none         |
+| anyPointerCoarse | any-pointer: coarse |
+| anyPointerFine   | any-pointer: fine   |
+| anyPointerNone   | any-pointer: none   |
+| pointerCoarse    | pointer: coarse     |
+| pointerFine      | pointer: fine       |
+| pointerNone      | pointer: none       |
 
 ### **Media Display**
 
-| Key          | Value                    |
-| :----------- | :----------------------- |
-| `browser`    | `display-mode: browser`  |
-| `fullScreen` | `display-mode: browser`  |
-| `minUI`      | `display-mode: browser`  |
-| `standalone` | `display-mode: browser`  |
-| `landscape`  | `orientation: landscape` |
-| `portrait`   | `orientation: portrait`  |
+| Key        | Value                  |
+| :--------- | :--------------------- |
+| browser    | display-mode: browser  |
+| fullScreen | display-mode: browser  |
+| minUI      | display-mode: browser  |
+| standalone | display-mode: browser  |
+| landscape  | orientation: landscape |
+| portrait   | orientation: portrait  |
 
 ## **Media Boundaries**
 
-| Key      | Value          |
-| :------- | :------------- |
-| `width`  | `width`        |
-| `height` | `height`       |
-| `ratio`  | `aspect-ratio` |
-| `res`    | `resolution`   |
+| Key    | Value        |
+| :----- | :----------- |
+| width  | width        |
+| height | height       |
+| ratio  | aspect-ratio |
+| res    | resolution   |
 
 ## **Media Accessibility**
 
-| Key                | Value                                   |
-| :----------------- | :-------------------------------------- |
-| `darkColorScheme`  | `prefers-color-scheme: dark`            |
-| `lightColorScheme` | `prefers-color-scheme: light`           |
-| `reducedMotion`    | `prefers-reduced-motion: reduce`        |
-| `reducedMotionAny` | `prefers-reduced-motion: no-preference` |
+| Key              | Value                                 |
+| :--------------- | :------------------------------------ |
+| darkColorScheme  | prefers-color-scheme: dark            |
+| lightColorScheme | prefers-color-scheme: light           |
+| reducedMotion    | prefers-reduced-motion: reduce        |
+| reducedMotionAny | prefers-reduced-motion: no-preference |

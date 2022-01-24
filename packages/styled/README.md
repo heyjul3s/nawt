@@ -17,7 +17,7 @@ pnpm install @nawt/styled
 
 ## **API**
 
-### **`styledObject`**(element: `TStyledElement`, styles: `CSSObject`, props: `Partial<TStyledObjectProps>`)
+### **styledObject**(element: `TStyledElement`, styles: `CSSObject`, props: `Partial<TStyledObjectProps>`)
 
 A utility function to help create styled objects complemented with Styled System properties. As the function name implies, this function only accepts styles that are in object literal syntax.
 
@@ -54,7 +54,7 @@ type TStyledObjectProps = {
 
 ---
 
-### **`styledSet`**(config: `TStyledSetConfig`, baseElement: `keyof JSX.IntrinsicElements`)
+### **styledSet**(config: `TStyledSetConfig`, baseElement: `keyof JSX.IntrinsicElements`)
 
 Similar to `styledObject` with the difference that this utility function creates bulk Styled Components as per the config that you provide.
 
