@@ -17,7 +17,7 @@ pnpm install @nawt/styled
 
 ## **API**
 
-### **`styledObject`**(element: `TStyledElement`, styles: `CSSObject`, props: `Partial<TStyledObjectProps>`)
+### **styledObject**(element: `TStyledElement`, styles: `CSSObject`, props: `Partial<TStyledObjectProps>`)
 
 A utility function to help create styled objects complemented with Styled System properties. As the function name implies, this function only accepts styles that are in object literal syntax.
 
@@ -54,41 +54,57 @@ type TStyledObjectProps = {
 
 ---
 
-### **`styledSet`**(config: `TStyledSetConfig`, baseElement: `keyof JSX.IntrinsicElements`)
+### **styledSet**(config: `TStyledSetConfig`, baseElement: `keyof JSX.IntrinsicElements`)
 
 Similar to `styledObject` with the difference that this utility function creates bulk Styled Components as per the config that you provide.
 
 ```ts
 import { styledSet } from '@nawt/styled';
 
-export const { P, Meta } = styledSet({
+export const { P, H1 } = styledSet(
   {
-    baseStyles: {
-      fontSize: ['1rem', '1.5rem'],
-    }
-
-    P: {
-      color: 'black',
-      as: 'p'
+    base: {
+      styles: {
+        color: 'black'
+      },
+      element: 'p'
     },
-
-    Meta: {
-      color: 'red'
+    components: {
+      P: {
+        lineHeight: '1.2',
+        as: 'p'
+      },
+      H1: {
+        lineHeight: '1.3',
+        as: 'h1'
+      }
     }
-  }
-}, 'div');
+  },
+  'div'
+);
 ```
 
 ### Typings
 
 ```ts
 type TStyledConfig = Partial<{
-  baseStyles: any;
-  components: any;
+  base: {
+    styles: CSSObject;
+    element: keyof JSX.IntrinsicElements;
+    attrs?: any;
+    compose?: styleFn[];
+    variants?: VariantArgs;
+    system?: Config;
+  };
+  components: Record<string, TStyledSetComponent>;
+}>;
+
+type TStyledSetComponent = Partial<{
   attrs: any;
   as: keyof JSX.IntrinsicElements;
   compose: styleFn[];
   variants: VariantArgs;
   system: Config;
-}>;
+}> &
+  CSSObject;
 ```

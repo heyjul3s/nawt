@@ -17,13 +17,13 @@ pnpm install @nawt/flex
 
 ## **API**
 
-### <**`FlexRow`** \/>
+### <**FlexRow** \/>
 
 Typically used in lieu with FlexCol, you can also reverse the order of items with the `isReverse` prop with FlexRow.
 
-| Parameter   | Default Value | Type      | Description                           |
-| :---------- | :------------ | :-------- | :------------------------------------ |
-| `isReverse` | `false`       | `boolean` | Defines whether to reverse item order |
+| Parameter | Default Value | Type      | Description                           |
+| :-------- | :------------ | :-------- | :------------------------------------ |
+| isReverse | `false`       | `boolean` | Defines whether to reverse item order |
 
 ```ts
 import { FlexRow, FlexCol } from '@nawt/flex';
@@ -53,17 +53,17 @@ export const MyReversedFlexGrid = () => {
 
 ---
 
-### <**`FlexCol`** \/>
+### <**FlexCol** \/>
 
 Staple flex column component where you can define the following:
 
-| Parameter      | Default Value | Type                 | Description                                                                          |
-| :------------- | :------------ | :------------------- | :----------------------------------------------------------------------------------- |
-| `totalColumns` | `12`          | `number`             | Defines the total number of columns as the basis for the calculation of 'columnSize' |
-| `columnSize`   | `n/a`         | `number \| number[]` | Defines the size of the column                                                       |
-| `offset`       | `n/a`         | `number \| number[]` | Defines the size of the column                                                       |
-| `gutterWidth`  | `n/a`         | `number \| number[]` | Defines the left/right padding of a column                                           |
-| `gap`          | `n/a`         | `number`             | Defines the gap value of a column                                                    |
+| Parameter    | Default Value | Type                 | Description                                                                          |
+| :----------- | :------------ | :------------------- | :----------------------------------------------------------------------------------- |
+| totalColumns | `12`          | `number`             | Defines the total number of columns as the basis for the calculation of 'columnSize' |
+| columnSize   | `n/a`         | `number \| number[]` | Defines the size of the column                                                       |
+| offset       | `n/a`         | `number \| number[]` | Defines the size of the column                                                       |
+| gutterWidth  | `n/a`         | `number \| number[]` | Defines the left/right padding of a column                                           |
+| gap          | `n/a`         | `number`             | Defines the gap value of a column                                                    |
 
 Typical usage is as follows
 

@@ -31,4 +31,4 @@ export function mqOnlySpeech(query: string) {
   return mq(query, 'onlySpeech');
 }
 
-export { createMq } from './media';
+export { createMq, createMqs } from './media';

@@ -1,5 +1,5 @@
-import { styledObject } from '../../styled/src';
-import type { TStyledObject } from '../../styled/src';
+import { styledObject } from '@nawt/styled';
+import type { TStyledObject } from '@nawt/styled';
 
 export const FlexRowBase: TStyledObject = styledObject('div', {
   display: 'flex',

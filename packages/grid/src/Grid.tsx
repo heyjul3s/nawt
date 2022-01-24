@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Block } from '../../block/src';
+import { Block } from '@nawt/block';
 import css from '@styled-system/css';
 
 type TGridProps = Partial<{

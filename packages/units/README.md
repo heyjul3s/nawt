@@ -17,7 +17,7 @@ pnpm install @nawt/units
 
 ## **API**
 
-### **`pxToEm`**(value: `string`, baseSize: `number`)
+### **pxToEm**(value: `string`, baseSize: `number`)
 
 Converts px to em string.
 
@@ -29,7 +29,7 @@ pxToEm('48px'); // returns 3em
 
 ---
 
-### **`pxToRem`**(value: `string`, baseSize: `number`)
+### **pxToRem**(value: `string`, baseSize: `number`)
 
 Converts px to rem string.
 
@@ -41,7 +41,7 @@ pxToRem('48px'); // returns 3rem
 
 ---
 
-### **`emToPx`**(value: `string`, baseSize: `number`)
+### **emToPx**(value: `string`, baseSize: `number`)
 
 Converts em to px string.
 
@@ -53,7 +53,7 @@ emToPx('3em'); // returns 48px
 
 ---
 
-### **`remToPx`**(value: `string`, baseSize: `number`)
+### **remToPx**(value: `string`, baseSize: `number`)
 
 Converts em to px string.
 

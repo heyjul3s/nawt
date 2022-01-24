@@ -1,0 +1,50 @@
+{
+  "name": "nawt",
+  "version": "0.1.0",
+  "description": "A minimal styled-components UI library",
+  "main": "src/index.ts",
+  "keywords": [
+    "react",
+    "jsx",
+    "styled-components",
+    "css-in-js",
+    "ui",
+    "block",
+    "colors",
+    "flex",
+    "grid",
+    "media",
+    "media query",
+    "styled",
+    "units"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyjul3s/nawt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heyjul3s/nawt/issues"
+  },
+  "scripts": {
+    "build": "rimraf dist && bundler"
+  },
+  "author": "Julian Low <hello@heyjul.es>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/nawt.js",
+    "module": "dist/nawt.esm.js",
+    "typings": "dist/index.d.ts"
+  },
+  "devDependencies": {
+    "@nawt/block": "workspace:0.1.0",
+    "@nawt/bundler": "workspace:0.1.0",
+    "@nawt/colors": "workspace:0.1.0",
+    "@nawt/flex": "workspace:0.1.0",
+    "@nawt/grid": "workspace:0.1.0",
+    "@nawt/media": "workspace:0.1.0",
+    "@nawt/styled": "workspace:0.1.0",
+    "@nawt/text": "workspace:0.1.0",
+    "@nawt/units": "workspace:0.1.0"
+  }
+}

@@ -61,12 +61,12 @@ export type TStyledSetConfig = {
   base: {
     styles: CSSObject;
     element: keyof JSX.IntrinsicElements;
+    attrs?: any;
+    compose?: styleFn[];
+    variants?: VariantArgs;
+    system?: Config;
   };
   components: Record<string, TStyledSetComponent>;
-  attrs?: any;
-  compose?: styleFn[];
-  variants?: VariantArgs;
-  system?: Config;
 };
 
 export type TStyledSetComponent = Partial<{

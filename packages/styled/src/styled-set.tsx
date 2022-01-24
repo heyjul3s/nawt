@@ -1,4 +1,3 @@
-import isEmpty from 'lodash.isempty';
 import { isStyledComponent } from 'styled-components';
 import { styledObject } from './styled-object';
 
@@ -9,8 +8,15 @@ import type {
 } from './typings';
 
 export function styledSet(config: TStyledSetConfig) {
-  const StyledBase = !isEmpty(config.base)
-    ? styledObject(config.base?.element || 'div', config.base?.styles || {})
+  const { element, styles, attrs, compose, system, variants } = config.base;
+
+  const StyledBase = !!element
+    ? styledObject(element || 'div', styles || {}, {
+        attrs,
+        compose,
+        system,
+        variants
+      })
     : void 0;
 
   return Object.entries(config.components).reduce((components, config) => {
