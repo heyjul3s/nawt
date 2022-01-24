@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "description": "A small library of Styled Components utilities",
   "main": "src/index.ts",
+  "keywords": [
+    "react",
+    "jsx",
+    "styled-components",
+    "css-in-js",
+    "ui",
+    "layout"
+  ],
   "scripts": {
     "test": "jest --passWithNoTests --colors",
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",

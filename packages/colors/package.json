@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "description": "Various color utilities with color value conversion functions and more",
   "main": "src/index.ts",
+  "keywords": [
+    "react",
+    "jsx",
+    "styled-components",
+    "css-in-js",
+    "ui",
+    "colors"
+  ],
   "scripts": {
     "test": "jest --passWithNoTests --colors",
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",

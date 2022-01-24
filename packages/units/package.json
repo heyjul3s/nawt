@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "description": "A utility library for CSS unit conversions.",
   "main": "src/index.ts",
+  "keywords": [
+    "react",
+    "jsx",
+    "styled-components",
+    "css-in-js",
+    "ui",
+    "unit",
+    "layout"
+  ],
   "scripts": {
     "test": "jest --passWithNoTests --colors",
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",

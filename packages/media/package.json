@@ -3,6 +3,16 @@
   "version": "0.1.0",
   "description": "A media query utility library with support for newer media feature queries.",
   "main": "src/index.ts",
+  "keywords": [
+    "react",
+    "jsx",
+    "styled-components",
+    "css-in-js",
+    "ui",
+    "media",
+    "media query",
+    "layout"
+  ],
   "scripts": {
     "test": "jest --passWithNoTests --colors",
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",

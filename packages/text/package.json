@@ -3,6 +3,16 @@
   "version": "0.1.0",
   "description": "Text styled components.",
   "main": "src/index.ts",
+  "keywords": [
+    "react",
+    "jsx",
+    "styled-components",
+    "css-in-js",
+    "ui",
+    "text",
+    "typography",
+    "layout"
+  ],
   "scripts": {
     "test": "jest --passWithNoTests --colors",
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",

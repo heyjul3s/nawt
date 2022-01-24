@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "description": "Basic generic component block with predefined CSS props",
   "main": "src/index.ts",
+  "keywords": [
+    "react",
+    "jsx",
+    "styled-components",
+    "css-in-js",
+    "ui",
+    "block",
+    "layout"
+  ],
   "scripts": {
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",
     "prettier:fix": "prettier --ignore-path '../../.prettierignore' --write .",

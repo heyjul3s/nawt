@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "description": "Flexbox styled component with capability to define number of columns",
   "main": "src/index.ts",
+  "keywords": [
+    "react",
+    "jsx",
+    "styled-components",
+    "css-in-js",
+    "ui",
+    "flex",
+    "layout"
+  ],
   "scripts": {
     "test": "jest --passWithNoTests --colors",
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",
