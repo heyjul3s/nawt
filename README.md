@@ -1,10 +1,12 @@
 # Nawt
 
-A minimal UI library to help in creating custom design systems with Styled Components. This library attempts to give you more control in regards to direction and functionality by attempting to keep it minimal thus, removing the need to inherit unnecessary bloat and or styles.
+A minimal UI library to help in creating custom design systems with Styled Components and Styled System. This library attempts to give you more control in regards to direction and functionality by attempting to keep it minimal thus, removing the need to inherit unnecessary bloat and or styles.
 
 To install,
 
 ```sh
+# * NOTE: omit @types/styled-components @types/styled-system if you're not using Typescript
+
 # Yarn
 yarn add nawt styled-components styled-system @types/styled-components @types/styled-system
 
