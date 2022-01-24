@@ -9,11 +9,9 @@ specifiers:
   styled-components: ^5.3.3
   styled-system: ^5.1.5
 
-dependencies:
-  '@nawt/styled': link:../styled
-
 devDependencies:
   '@nawt/bundler': link:../bundler
+  '@nawt/styled': link:../styled
   '@types/styled-components': 5.1.21
   '@types/styled-system': 5.1.15
   csstype: 3.0.10
