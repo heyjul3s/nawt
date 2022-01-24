@@ -1,5 +1,6 @@
 import isEmpty from 'lodash.isempty';
 import styled from 'styled-components';
+import css from '@styled-system/css';
 
 import {
   compose,
@@ -19,9 +20,9 @@ import {
 } from 'styled-system';
 
 import type { Config, VariantArgs, styleFn } from 'styled-system';
-import type { CSSObject } from 'styled-components';
 
 import type {
+  TScalableCSSObject,
   TStyledElement,
   TStyledObjectProps,
   TStyledObject
@@ -39,7 +40,7 @@ export const typographyStyleProps: Config = {
 
 export function styledObject<Props = void, ThemeType = void>(
   element: TStyledElement,
-  styles: CSSObject,
+  styles: TScalableCSSObject,
   props: Partial<TStyledObjectProps> = {
     attrs: {},
     compose: [],
@@ -50,7 +51,7 @@ export function styledObject<Props = void, ThemeType = void>(
   const composition = props?.compose || ([] as styleFn[]);
 
   return styled(element).attrs(props.attrs || {})(
-    styles,
+    css(styles),
     compose(
       background,
       border,
