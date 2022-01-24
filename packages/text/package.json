@@ -2,10 +2,21 @@
   "name": "@nawt/text",
   "version": "0.1.0",
   "description": "Text styled components.",
+  "main": "src/index.ts",
+  "keywords": [
+    "react",
+    "jsx",
+    "styled-components",
+    "css-in-js",
+    "ui",
+    "text",
+    "typography",
+    "layout"
+  ],
   "scripts": {
     "test": "jest --passWithNoTests --colors",
-    "prettier": "prettier --check . '!dist/*'",
-    "prettier:fix": "prettier --write . '!dist/*'",
+    "prettier": "prettier --ignore-path '../../.prettierignore' --check .",
+    "prettier:fix": "prettier --ignore-path '../../.prettierignore' --write .",
     "lint:es": "eslint --ignore-pattern '/dist/' . --ext .ts,.tsx .",
     "lint:es-fix": "eslint --ignore-pattern '/dist/' --fix --ext .js,.ts,.tsx .",
     "build": "rimraf dist && bundler"
@@ -13,8 +24,8 @@
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "publishConfig": {
-    "access" : "public",
-    "main" : "dist/text.js",
+    "access": "public",
+    "main": "dist/text.js",
     "module": "dist/text.esm.js",
     "typings": "dist/index.d.ts"
   },

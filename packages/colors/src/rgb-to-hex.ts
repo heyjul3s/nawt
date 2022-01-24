@@ -14,19 +14,14 @@ export function compactRgbValue(value: any): number[] {
       ? extractRgbValue((value as string[]).toString())
       : value;
 
-  return rgbArray?.map(v => {
+  return rgbArray?.map((v) => {
     const trimmedValue = isString(v) ? v.trim() : v;
     return parseInt(trimmedValue);
   });
 }
 
 export function extractRgbValue(value: string): string[] {
-  return !!value
-    ? value
-        ?.split('(')[1]
-        ?.split(')')?.[0]
-        ?.split(',')
-    : [];
+  return !!value ? value?.split('(')[1]?.split(')')?.[0]?.split(',') : [];
 }
 
 export function isString(value: unknown): boolean {
