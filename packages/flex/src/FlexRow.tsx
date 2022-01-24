@@ -3,7 +3,7 @@ import { FlexRowBase } from './FlexRowBase';
 import type { Property } from 'csstype';
 import type { TFlexRowProps } from './typings';
 
-export const FlexRow = styled(FlexRowBase)<TFlexRowProps>(props => ({
+export const FlexRow = styled(FlexRowBase)<TFlexRowProps>((props) => ({
   flexDirection: setFlexDirection(props.reverse)
 }));
 

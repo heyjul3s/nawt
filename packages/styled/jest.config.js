@@ -4,4 +4,4 @@ module.exports = {
   ...baseConfig,
   name: '@nawt/styled',
   displayName: 'Styled'
-}
+};

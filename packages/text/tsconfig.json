@@ -6,5 +6,5 @@
   },
   "references": [{ "path": "../styled/tsconfig.json" }],
   "include": ["src/*"],
-  "exclude": ["dist/*"],
+  "exclude": ["dist/*"]
 }

@@ -4,4 +4,4 @@ module.exports = {
   ...baseConfig,
   name: '@nawt/units',
   displayName: 'Units'
-}
+};

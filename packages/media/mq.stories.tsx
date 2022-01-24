@@ -19,6 +19,6 @@ export default {
   component: MediaStyled
 } as ComponentMeta<any>;
 
-const Template: ComponentStory<any> = args => <MediaStyled {...args} />;
+const Template: ComponentStory<any> = (args) => <MediaStyled {...args} />;
 
 export const Primary = Template.bind({});
