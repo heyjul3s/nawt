@@ -13,6 +13,13 @@
     "typography",
     "layout"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyjul3s/nawt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heyjul3s/nawt/issues"
+  },
   "scripts": {
     "test": "jest --passWithNoTests --colors",
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",
@@ -29,10 +36,8 @@
     "module": "dist/text.esm.js",
     "typings": "dist/index.d.ts"
   },
-  "dependencies": {
-    "@nawt/styled": "workspace:0.1.0"
-  },
   "devDependencies": {
+    "@nawt/styled": "workspace:0.1.0",
     "@nawt/bundler": "workspace:0.1.0",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",

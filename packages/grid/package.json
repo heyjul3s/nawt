@@ -12,6 +12,13 @@
     "grid",
     "layout"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyjul3s/nawt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heyjul3s/nawt/issues"
+  },
   "scripts": {
     "test": "jest --passWithNoTests --colors",
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",

@@ -10,7 +10,10 @@
   "author": "Julian Low <hello@heyjul.es>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/heyjul3s/artefakt.git"
+    "url": "git+https://github.com/heyjul3s/nawt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heyjul3s/nawt/issues"
   },
   "license": "MIT",
   "devDependencies": {

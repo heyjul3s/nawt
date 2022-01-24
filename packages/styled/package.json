@@ -11,6 +11,13 @@
     "ui",
     "layout"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyjul3s/nawt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heyjul3s/nawt/issues"
+  },
   "scripts": {
     "test": "jest --passWithNoTests --colors",
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",
@@ -32,10 +39,8 @@
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",
     "csstype": "^3.0.10",
+    "lodash.isempty": "^4.4.0",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
-  },
-  "dependencies": {
-    "lodash.isempty": "^4.4.0"
   }
 }

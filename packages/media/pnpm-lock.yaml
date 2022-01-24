@@ -13,16 +13,14 @@ specifiers:
   styled-components: ^5.3.3
   styled-system: ^5.1.5
 
-dependencies:
-  lodash.isempty: 4.4.0
-  lodash.partition: 4.6.0
-
 devDependencies:
   '@nawt/bundler': link:../bundler
   '@types/react': 17.0.38
   '@types/react-dom': 17.0.11
   '@types/styled-components': 5.1.21
   '@types/styled-system': 5.1.15
+  lodash.isempty: 4.4.0
+  lodash.partition: 4.6.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   styled-components: 5.3.3_react-dom@17.0.2+react@17.0.2
@@ -399,11 +397,11 @@ packages:
 
   /lodash.isempty/4.4.0:
     resolution: {integrity: sha1-b4bL7di+TsmHvpqvM8loTbGzHn4=}
-    dev: false
+    dev: true
 
   /lodash.partition/4.6.0:
     resolution: {integrity: sha1-o45GtzRp4EILDaEhLmbUFL42S6Q=}
-    dev: false
+    dev: true
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}

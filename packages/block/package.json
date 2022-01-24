@@ -12,6 +12,13 @@
     "block",
     "layout"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyjul3s/nawt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heyjul3s/nawt/issues"
+  },
   "scripts": {
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",
     "prettier:fix": "prettier --ignore-path '../../.prettierignore' --write .",
