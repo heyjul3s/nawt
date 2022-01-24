@@ -1,3 +1,3 @@
-import { Block } from '../../block/src';
+import { Block } from '@nawt/block';
 
 export const GridItem = Block;

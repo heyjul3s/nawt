@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { styledObject } from '../../styled/src';
+import { styledObject } from '@nawt/styled';
 
-import type { TStyledObject } from '../../styled/src';
+import type { TStyledObject } from '@nawt/styled';
 import type { TTextProps } from './typings';
 
 export const TextBase: TStyledObject = styledObject('p', {});
