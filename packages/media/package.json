@@ -4,8 +4,8 @@
   "description": "A media query utility library with support for newer media feature queries.",
   "scripts": {
     "test": "jest --passWithNoTests --colors",
-    "prettier": "prettier --check . '!dist/*'",
-    "prettier:fix": "prettier --write . '!dist/*'",
+    "prettier": "prettier --ignore-path '../../.prettierignore' --check .",
+    "prettier:fix": "prettier --ignore-path '../../.prettierignore' --write .",
     "lint:es": "eslint --ignore-pattern '/dist/' . --ext .ts,.tsx .",
     "lint:es-fix": "eslint --ignore-pattern '/dist/' --fix --ext .js,.ts,.tsx .",
     "build": "rimraf dist && bundler"
@@ -13,8 +13,8 @@
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "publishConfig": {
-    "access" : "public",
-    "main" : "dist/media.js",
+    "access": "public",
+    "main": "dist/media.js",
     "module": "dist/media.esm.js",
     "typings": "dist/index.d.ts"
   },
