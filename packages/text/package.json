@@ -2,6 +2,7 @@
   "name": "@nawt/text",
   "version": "0.1.0",
   "description": "Text styled components.",
+  "main": "src/index.ts",
   "scripts": {
     "test": "jest --passWithNoTests --colors",
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",

@@ -2,6 +2,7 @@
   "name": "@nawt/grid",
   "version": "0.1.0",
   "description": "A component for quickly setting grid columns with capbility to define template auto columns.",
+  "main": "src/index.ts",
   "scripts": {
     "test": "jest --passWithNoTests --colors",
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",

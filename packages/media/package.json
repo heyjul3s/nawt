@@ -2,6 +2,7 @@
   "name": "@nawt/media",
   "version": "0.1.0",
   "description": "A media query utility library with support for newer media feature queries.",
+  "main": "src/index.ts",
   "scripts": {
     "test": "jest --passWithNoTests --colors",
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",

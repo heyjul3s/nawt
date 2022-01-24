@@ -2,6 +2,7 @@
   "name": "@nawt/units",
   "version": "0.1.0",
   "description": "A utility library for CSS unit conversions.",
+  "main": "src/index.ts",
   "scripts": {
     "test": "jest --passWithNoTests --colors",
     "prettier": "prettier --ignore-path '../../.prettierignore' --check .",
