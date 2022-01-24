@@ -7,7 +7,7 @@ const MediaStyled = styled.div`
   display: block;
   width: 400px;
   height: 400px;
-  background orange;
+  background: orange;
 
   ${mq('width >= 768px')`
     background: red;
