@@ -20,11 +20,22 @@ import {
 
 import type { Config, VariantArgs, styleFn } from 'styled-system';
 import type { CSSObject } from 'styled-components';
+
 import type {
   TStyledElement,
   TStyledObjectProps,
   TStyledObject
 } from './typings';
+
+export const typographyStyleProps: Config = {
+  textDecoration: true,
+  textIndent: true,
+  textTransform: true,
+  textOverflow: true,
+  whiteSpace: true,
+  wordBreak: true,
+  wordSpacing: true
+};
 
 export function styledObject<Props = void, ThemeType = void>(
   element: TStyledElement,
@@ -55,6 +66,7 @@ export function styledObject<Props = void, ThemeType = void>(
       ...composition
     ),
     !isEmpty(props?.variants) && variant(props.variants as VariantArgs),
-    !isEmpty(props?.system) && system(props.system as Config)
+    !isEmpty(props?.system) &&
+      system({ ...typographyStyleProps, ...(props.system as Config) })
   );
 }

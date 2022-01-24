@@ -1,25 +1,10 @@
 import styled from 'styled-components';
 import { styledObject } from '../../styled/src';
 
-import type { Config } from 'styled-system';
 import type { TStyledObject } from '../../styled/src';
-import type { TTypographyProps, TTextProps } from './typings';
+import type { TTextProps } from './typings';
 
-export const typographyStyleProps: Config = {
-  textDecoration: true,
-  textIndent: true,
-  textTransform: true,
-  textOverflow: true,
-  whiteSpace: true,
-  wordBreak: true,
-  wordSpacing: true
-};
-
-export const TextBase: TStyledObject<TTypographyProps> = styledObject(
-  'p',
-  {},
-  { system: typographyStyleProps }
-);
+export const TextBase: TStyledObject = styledObject('p', {});
 
 export const Text = styled(TextBase)<TTextProps>((props) => {
   const textOverflow = props?.textOverflow || 'ellipsis';
