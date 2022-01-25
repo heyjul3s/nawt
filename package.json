@@ -1,7 +1,4 @@
 {
-  "name": "nawt",
-  "version": "0.1.0",
-  "description": "",
   "scripts": {
     "lint:es": "eslint --ext .js,.ts,.tsx .",
     "lint:es-fix": "eslint --fix --ext .js,.ts,.tsx .",
@@ -20,7 +17,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/heyjul3s/nawt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heyjul3s/nawt/issues"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.7",
