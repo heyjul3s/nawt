@@ -1,5 +1,6 @@
 import isEmpty from 'lodash.isempty';
 import styled from 'styled-components';
+import css from '@styled-system/css';
 
 import {
   compose,
@@ -7,50 +8,66 @@ import {
   border,
   color,
   display,
+  flexbox,
+  grid,
   layout,
   position,
   shadow,
   space,
   typography,
   variant,
-  system,
-  styleFn,
+  system
 } from 'styled-system';
 
-import type { Config, VariantArgs } from 'styled-system';
-import type { ScalableCSSObject } from './typings';
+import type { Config, VariantArgs, styleFn } from 'styled-system';
 
-type TStyledObject = {
-  element: keyof JSX.IntrinsicElements;
-  styles: ScalableCSSObject;
-  props: Partial<{
-    attrs: any;
-    compose: styleFn[];
-    variants: VariantArgs;
-    system: Config;
-  }>;
+import type {
+  TScalableCSSObject,
+  TStyledElement,
+  TStyledObjectProps,
+  TStyledObject
+} from './typings';
+
+export const typographyStyleProps: Config = {
+  textDecoration: true,
+  textIndent: true,
+  textTransform: true,
+  textOverflow: true,
+  whiteSpace: true,
+  wordBreak: true,
+  wordSpacing: true
 };
 
-export function styledObject(
-  element: keyof JSX.IntrinsicElements,
-  styles: any,
-  props = { attrs: {}, compose: [], system: {}, variants: {} }
-) {
-  return styled(element).attrs(props.attrs)(
-    styles,
+export function styledObject<Props = void, ThemeType = void>(
+  element: TStyledElement,
+  styles: TScalableCSSObject,
+  props: Partial<TStyledObjectProps> = {
+    attrs: {},
+    compose: [],
+    system: {},
+    variants: {}
+  }
+): TStyledObject<Props, ThemeType> {
+  const composition = props?.compose || ([] as styleFn[]);
+
+  return styled(element).attrs(props.attrs || {})(
+    css(styles),
     compose(
       background,
       border,
       color,
       display,
+      flexbox,
+      grid,
       layout,
       position,
       shadow,
       space,
       typography,
-      ...props.compose
+      ...composition
     ),
-    !isEmpty(props?.variants) && variant(props.variants),
-    !isEmpty(props?.system) && system(props.system)
+    !isEmpty(props?.variants) && variant(props.variants as VariantArgs),
+    !isEmpty(props?.system) &&
+      system({ ...typographyStyleProps, ...(props.system as Config) })
   );
 }

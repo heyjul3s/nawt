@@ -1,0 +1,61 @@
+name: Linting
+
+on:
+  push:
+    branches: [main, develop]
+
+  pull_request:
+    branches: [main, develop]
+
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
+
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16]
+
+    steps:
+      - name: Checkout code repository
+        uses: actions/checkout@v2
+
+      - name: Checkout Code Repository
+        uses: actions/checkout@v2
+
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.20.3
+
+      - name: Set Up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Get File Changes
+        id: get_files_changed
+        uses: trilom/file-changes-action@v1.2.3
+        with:
+          output: ' '
+
+      - name: File(s) Changed
+        run: |
+          echo Added files: ${{ steps.get_files_changed.outputs.files_added }}
+          echo Changed files: ${{ steps.get_files_changed.outputs.files_modified }}
+          echo Removed files: ${{ steps.get_files_changed.outputs.files_removed }}
+
+      - name: Run ESlint
+        if: ${{ always() && (steps.get_file_changes.outputs.files_added || steps.get_file_changes.outputs.files_modified) }}
+        run: yarn eslint --config ./eslintrc.js -e "**/*.(ts|tsx|js|jsx|css|scss|html|md|json|yml)" ${{ steps.get_file_changes.outputs.files_added }} ${{ steps.get_file_changes.outputs.files_modified }} --fix
+
+      - name: Commit Lint Fixes
+        uses: stefanzweifel/git-auto-commit-action@v4.1.2
+        with:
+          commit_message: Apply ESLint and StyleLint formatting changes

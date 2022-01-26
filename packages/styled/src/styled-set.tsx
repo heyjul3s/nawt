@@ -1,24 +1,22 @@
-import isEmpty from 'lodash.isempty';
-import { styleFn, VariantArgs, Config } from 'styled-system';
 import { isStyledComponent } from 'styled-components';
 import { styledObject } from './styled-object';
 
-type TStyledSetConfig = Partial<{
-  baseStyles: any;
-  components: any;
-  attrs: any;
-  as: keyof JSX.IntrinsicElements;
-  compose: styleFn[];
-  variants: VariantArgs;
-  system: Config;
-}>;
+import type {
+  TStyledObject,
+  TStyledSetComponent,
+  TStyledSetConfig
+} from './typings';
 
-export function styledSet(
-  baseElement: keyof JSX.IntrinsicElements,
-  config: TStyledSetConfig
-) {
-  const StyledBase = !isEmpty(config.baseStyles)
-    ? styledObject(baseElement, config.baseStyles)
+export function styledSet(config: TStyledSetConfig) {
+  const { element, styles, attrs, compose, system, variants } = config.base;
+
+  const StyledBase = !!element
+    ? styledObject(element || 'div', styles || {}, {
+        attrs,
+        compose,
+        system,
+        variants
+      })
     : void 0;
 
   return Object.entries(config.components).reduce((components, config) => {
@@ -26,22 +24,31 @@ export function styledSet(
 
     const {
       as = 'div',
-      compose,
-      variants,
-      system,
-      attrs,
+      compose = [],
+      variants = {},
+      system = {},
+      attrs = {},
       ...styles
-    } = props as TStyledSetConfig;
-    const BaseElement = isStyledComponent(StyledBase) ? StyledBase : as;
+    } = props as TStyledSetComponent;
+
+    const BaseElement = !!as
+      ? as
+      : isStyledComponent(StyledBase)
+      ? StyledBase
+      : 'div';
 
     return {
       ...components,
-      [name]: styledObject(BaseElement, styles, {
-        attrs,
-        compose,
-        variants,
-        system
-      })
+      [name]: styledObject(
+        BaseElement,
+        { ...styles },
+        {
+          compose,
+          variants,
+          system,
+          attrs
+        }
+      )
     };
-  }, {});
+  }, {} as Record<string, TStyledObject>);
 }

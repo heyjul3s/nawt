@@ -1,0 +1,52 @@
+{
+  "name": "@nawt/media",
+  "version": "0.1.0",
+  "description": "A media query utility library with support for newer media feature queries.",
+  "main": "src/index.ts",
+  "keywords": [
+    "react",
+    "jsx",
+    "styled-components",
+    "css-in-js",
+    "ui",
+    "media",
+    "media query",
+    "layout"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyjul3s/nawt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heyjul3s/nawt/issues"
+  },
+  "scripts": {
+    "test": "jest --passWithNoTests --colors",
+    "prettier": "prettier --ignore-path '../../.prettierignore' --check .",
+    "prettier:fix": "prettier --ignore-path '../../.prettierignore' --write .",
+    "lint:es": "eslint --ignore-pattern '/dist/' . --ext .ts,.tsx .",
+    "lint:es-fix": "eslint --ignore-pattern '/dist/' --fix --ext .js,.ts,.tsx .",
+    "build": "rimraf dist && bundler"
+  },
+  "author": "Julian Low <hello@heyjul.es>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/media.js",
+    "module": "dist/media.esm.js",
+    "typings": "dist/index.d.ts"
+  },
+  "devDependencies": {
+    "@nawt/bundler": "workspace:0.1.0",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@types/styled-components": "^5.1.15",
+    "@types/styled-system": "^5.1.13",
+    "lodash.isempty": "^4.4.0",
+    "lodash.partition": "^4.6.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3",
+    "styled-system": "^5.1.5"
+  }
+}

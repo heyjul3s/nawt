@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/addon-docs/blocks';
 
-<Meta title="Grid" />
+<Meta title="Components/Grid" />
 
 # Grid
 
@@ -12,7 +12,7 @@ import { Grid, GridItem } from './src';
 
 Default Grid without passed in props.
 
-<Grid>
+<Grid gap={['1rem', '2rem', '3rem']}>
   <GridItem>Hello World</GridItem>
   <GridItem>Hello World</GridItem>
   <GridItem>Hello World</GridItem>
@@ -58,7 +58,7 @@ With media query
 
 With column width.
 
-<Grid columnWidth={"210px"}>
+<Grid columnWidth={'210px'}>
   <GridItem>Hello World</GridItem>
   <GridItem>Hello World</GridItem>
   <GridItem>Hello World</GridItem>
@@ -72,7 +72,7 @@ With column width.
 
 With media query.
 
-<Grid columnWidth={["120px", "210px", "240px"]}>
+<Grid columnWidth={['120px', '210px', '240px']}>
   <GridItem>Hello World</GridItem>
   <GridItem>Hello World</GridItem>
   <GridItem>Hello World</GridItem>

@@ -1,14 +1,43 @@
 {
-  "name": "flex",
+  "name": "@nawt/flex",
   "version": "0.1.0",
-  "description": "A flexbox version of @artifak/flex. You can also view the docs at [Artifak Flex](https://www.artifak.dev/?content=Flex).",
-  "main": "index.js",
+  "description": "Flexbox styled component with capability to define number of columns",
+  "main": "src/index.ts",
+  "keywords": [
+    "react",
+    "jsx",
+    "styled-components",
+    "css-in-js",
+    "ui",
+    "flex",
+    "layout"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyjul3s/nawt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heyjul3s/nawt/issues"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --passWithNoTests --colors",
+    "prettier": "prettier --ignore-path '../../.prettierignore' --check .",
+    "prettier:fix": "prettier --ignore-path '../../.prettierignore' --write .",
+    "lint:es": "eslint --ignore-pattern '/dist/' . --ext .ts,.tsx .",
+    "lint:es-fix": "eslint --ignore-pattern '/dist/' --fix --ext .js,.ts,.tsx .",
+    "build": "rimraf dist && bundler"
   },
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/flex.js",
+    "module": "dist/flex.esm.js",
+    "typings": "dist/index.d.ts"
+  },
   "devDependencies": {
+    "@nawt/bundler": "workspace:0.1.0",
+    "@nawt/styled": "workspace:0.1.0",
     "@testing-library/react": "^12.1.2",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",

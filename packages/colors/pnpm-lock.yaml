@@ -1,0 +1,7 @@
+lockfileVersion: 5.3
+
+specifiers:
+  '@nawt/bundler': workspace:0.1.0
+
+devDependencies:
+  '@nawt/bundler': link:../bundler

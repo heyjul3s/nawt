@@ -1,22 +1,35 @@
 {
-  "name": "artefakt",
-  "version": "0.1.0",
-  "description": "",
   "scripts": {
-    "test": "jest --config jest.config.js",
-    "test-watch": "jest --config jest.config.js --watch",
+    "lint:es": "eslint --ext .js,.ts,.tsx .",
+    "lint:es-fix": "eslint --fix --ext .js,.ts,.tsx .",
+    "prettier:fix-all": "pnpm -r --if-present run prettier:fix",
+    "test:jest": "jest --passWithNoTests --colors",
+    "test:jest-watch": "jest --watch",
+    "test:jest-all": "pnpm -r --if-present run test",
+    "test:ci": "jest --ci --reporters='default' --reporters='./github-actions-reporter'",
     "storybook": "start-storybook --ci -p 6006",
-    "build-storybook": "build-storybook"
+    "ci:version": "pnpm changeset version",
+    "ci:publish": "pnpm publish -r",
+    "build:all": "pnpm -r --if-present run build",
+    "build:storybook": "build-storybook"
   },
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/heyjul3s/nawt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heyjul3s/nawt/issues"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@changesets/changelog-github": "^0.4.1",
-    "@changesets/cli": "^2.18.0",
+    "@changesets/cli": "^2.18.1",
     "@storybook/addon-actions": "^6.4.0",
     "@storybook/addon-essentials": "^6.4.0",
     "@storybook/addon-links": "^6.4.0",
@@ -26,6 +39,8 @@
     "@types/jest": "^27.0.3",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
     "babel-jest": "^27.4.4",
     "babel-loader": "^8.2.3",
     "eslint": "^8.4.1",
@@ -35,9 +50,11 @@
     "jest": "^27.4.4",
     "jest-runner-eslint": "^1.0.0",
     "jest-styled-components": "^7.0.8",
+    "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-docgen-typescript": "^2.1.1",
     "react-dom": "^17.0.2",
+    "rimraf": "^3.0.2",
     "ts-jest": "^27.1.1",
     "typescript": "^4.5.2"
   }

@@ -1,16 +1,45 @@
 {
-  "name": "block",
+  "name": "@nawt/block",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Basic generic component block with predefined CSS props",
+  "main": "src/index.ts",
+  "keywords": [
+    "react",
+    "jsx",
+    "styled-components",
+    "css-in-js",
+    "ui",
+    "block",
+    "layout"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyjul3s/nawt.git"
   },
-  "author": "",
+  "bugs": {
+    "url": "https://github.com/heyjul3s/nawt/issues"
+  },
+  "scripts": {
+    "prettier": "prettier --ignore-path '../../.prettierignore' --check .",
+    "prettier:fix": "prettier --ignore-path '../../.prettierignore' --write .",
+    "lint:es": "eslint --ignore-pattern '/dist/' . --ext .ts,.tsx .",
+    "lint:es-fix": "eslint --ignore-pattern '/dist/' --fix --ext .js,.ts,.tsx .",
+    "build": "rimraf dist && bundler"
+  },
+  "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/grid.js",
+    "module": "dist/grid.esm.js",
+    "typings": "dist/index.d.ts"
+  },
   "devDependencies": {
+    "@nawt/bundler": "workspace:0.1.0",
+    "@nawt/styled": "workspace:0.1.0",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",
+    "csstype": "^3.0.10",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
   }

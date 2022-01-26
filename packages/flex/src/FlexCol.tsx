@@ -1,16 +1,9 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import { FlexColBase } from './FlexColBase';
+import type { TFlexColProps } from './typings';
 
-type TFlexColProps = Partial<{
-  totalColumns: number;
-  columnSize: any;
-  offset: any;
-  gutterWidth: any;
-  gap: any;
-}>;
-
-export const FlexCol = styled(FlexColBase)<TFlexColProps>(props => {
+export const FlexCol = styled(FlexColBase)<TFlexColProps>((props) => {
   const baseColumnWidth = getColumnWidth(props.totalColumns);
   const columnSizing = setColumnSizing(baseColumnWidth, props.columnSize);
   const columnOffset = setColumnOffset(baseColumnWidth, props.offset);
@@ -40,7 +33,7 @@ export function setColumnSizing(
 ): any {
   return Array.isArray(columnSize) && columnSize.length > 1
     ? columnSize.map(
-        size => `${parseNumberToTwoDecimals(size * baseColumnWidth)}%`
+        (size) => `${parseNumberToTwoDecimals(size * baseColumnWidth)}%`
       )
     : `${parseNumberToTwoDecimals((columnSize as number) * baseColumnWidth)}%`;
 }
@@ -50,7 +43,7 @@ export function setColumnOffset(
   offset: number | number[]
 ): any {
   if (Array.isArray(offset) && offset.length > 1) {
-    return offset.map(size => `${size * baseColumnWidth}%`);
+    return offset.map((size) => `${size * baseColumnWidth}%`);
   }
 
   if (!Array.isArray(offset) && !!offset) {
@@ -62,7 +55,7 @@ export function setColumnOffset(
 
 export function setGutterWidth(gutterWidth: number | number[] = 1): any {
   return Array.isArray(gutterWidth) && gutterWidth.length > 1
-    ? gutterWidth.map(width => `${width / 2}em`)
+    ? gutterWidth.map((width) => `${width / 2}em`)
     : `${(gutterWidth as number) / 2}em`;
 }
 

@@ -1,0 +1,24 @@
+{
+  "name": "@nawt/bundler",
+  "version": "0.1.0",
+  "description": "nawt bundler",
+  "main": "index.js",
+  "bin": {
+    "bundler": "./src/index.js"
+  },
+  "scripts": {},
+  "author": "Julian Low <hello@heyjul.es>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyjul3s/nawt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heyjul3s/nawt/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.14.9",
+    "npm-dts": "^1.3.10",
+    "typescript": "^4.5.2"
+  }
+}
