@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@nawt/bundler': workspace:0.1.0
   '@nawt/styled': workspace:0.1.0
+  '@styled-system/css': ^5.1.5
   '@testing-library/react': ^12.1.2
   '@types/styled-components': ^5.1.15
   '@types/styled-system': ^5.1.13
@@ -12,6 +13,7 @@ specifiers:
 devDependencies:
   '@nawt/bundler': link:../bundler
   '@nawt/styled': link:../styled
+  '@styled-system/css': 5.1.5
   '@testing-library/react': 12.1.2
   '@types/styled-components': 5.1.21
   '@types/styled-system': 5.1.15
