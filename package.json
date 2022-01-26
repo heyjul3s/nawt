@@ -9,7 +9,7 @@
     "test:ci": "jest --ci --reporters='default' --reporters='./github-actions-reporter'",
     "storybook": "start-storybook --ci -p 6006",
     "ci:version": "pnpm changeset version",
-    "ci:publish": "pnpm publish -r --publish-branch='main' --no-git-checks",
+    "ci:publish": "pnpm build:all && pnpm publish -r --publish-branch='main' --no-git-checks",
     "build:all": "pnpm -r --if-present run build",
     "build:storybook": "build-storybook"
   },
