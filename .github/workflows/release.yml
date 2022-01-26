@@ -34,7 +34,7 @@ jobs:
         run: pnpm config set store-dir $PNPM_CACHE_FOLDER
 
       - name: Install Dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Create And Publish Versions
         uses: changesets/action@master
