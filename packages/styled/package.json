@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@nawt/bundler": "workspace:0.1.0",
+    "@styled-system/css": "^5.1.5",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",
     "csstype": "^3.0.10",
