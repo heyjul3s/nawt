@@ -1,7 +1,7 @@
 # @nawt/grid
 
-## 0.1.0
+## 0.1.1
 
 ### Patch Changes
 
-- Initial release
+- initial release

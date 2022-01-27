@@ -1,6 +1,6 @@
 {
   "name": "@nawt/block",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Basic generic component block with predefined CSS props",
   "main": "src/index.ts",
   "keywords": [
@@ -35,8 +35,8 @@
     "typings": "dist/index.d.ts"
   },
   "devDependencies": {
-    "@nawt/bundler": "workspace:0.1.0",
-    "@nawt/styled": "workspace:0.1.0",
+    "@nawt/bundler": "workspace:0.1.1",
+    "@nawt/styled": "workspace:0.1.1",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",
     "csstype": "^3.0.10",
