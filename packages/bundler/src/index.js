@@ -32,7 +32,8 @@ new Generator({
 
 build({
   ...commonConfig,
-  outfile: `dist/${outFileName}.js`
+  outfile: `dist/${outFileName}.cjs.js`,
+  format: 'cjs'
 });
 
 build({
