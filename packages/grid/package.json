@@ -2,7 +2,10 @@
   "name": "@nawt/grid",
   "version": "0.1.1",
   "description": "A component for quickly setting grid columns with capbility to define template auto columns.",
-  "main": "src/index.ts",
+  "main": "dist/grid.cjs.js",
+  "module": "dist/grid.esm.js",
+  "src": "src/index.ts",
+  "types": "dist/index.d.ts",
   "keywords": [
     "react",
     "jsx",
@@ -30,10 +33,7 @@
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "publishConfig": {
-    "access": "public",
-    "main": "dist/grid.js",
-    "module": "dist/grid.esm.js",
-    "typings": "dist/index.d.ts"
+    "access": "public"
   },
   "devDependencies": {
     "@nawt/block": "workspace:0.1.1",

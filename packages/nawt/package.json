@@ -2,7 +2,10 @@
   "name": "nawt",
   "version": "0.1.1",
   "description": "A minimal styled-components UI library",
-  "main": "src/index.ts",
+  "main": "dist/nawt.cjs.js",
+  "module": "dist/nawt.esm.js",
+  "src": "src/index.ts",
+  "types": "dist/index.d.ts",
   "keywords": [
     "react",
     "jsx",
@@ -31,10 +34,7 @@
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "publishConfig": {
-    "access": "public",
-    "main": "dist/nawt.js",
-    "module": "dist/nawt.esm.js",
-    "typings": "dist/index.d.ts"
+    "access": "public"
   },
   "devDependencies": {
     "@nawt/block": "workspace:0.1.1",

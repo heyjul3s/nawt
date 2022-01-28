@@ -2,7 +2,10 @@
   "name": "@nawt/text",
   "version": "0.1.1",
   "description": "Basic Text styled component with built-in text truncation functionality.",
-  "main": "src/index.ts",
+  "main": "dist/text.cjs.js",
+  "module": "dist/text.esm.js",
+  "src": "src/index.ts",
+  "types": "dist/index.d.ts",
   "keywords": [
     "react",
     "jsx",
@@ -31,10 +34,7 @@
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "publishConfig": {
-    "access": "public",
-    "main": "dist/text.js",
-    "module": "dist/text.esm.js",
-    "typings": "dist/index.d.ts"
+    "access": "public"
   },
   "devDependencies": {
     "@nawt/styled": "workspace:0.1.1",
