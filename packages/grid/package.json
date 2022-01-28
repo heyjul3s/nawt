@@ -1,6 +1,6 @@
 {
   "name": "@nawt/grid",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A component for quickly setting grid columns with capbility to define template auto columns.",
   "main": "dist/grid.cjs.js",
   "module": "dist/grid.esm.js",
@@ -36,8 +36,8 @@
     "access": "public"
   },
   "devDependencies": {
-    "@nawt/block": "workspace:0.1.1",
-    "@nawt/bundler": "workspace:0.1.1",
+    "@nawt/block": "workspace:0.1.2",
+    "@nawt/bundler": "workspace:0.1.2",
     "@styled-system/css": "^5.1.5",
     "@testing-library/react": "^12.1.2",
     "@types/styled-components": "^5.1.15",

@@ -1,6 +1,6 @@
 {
   "name": "@nawt/media",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A media query utility library with support for newer media feature queries.",
   "main": "dist/media.cjs.js",
   "module": "dist/media.esm.js",
@@ -37,7 +37,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@nawt/bundler": "workspace:0.1.1",
+    "@nawt/bundler": "workspace:0.1.2",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "@types/styled-components": "^5.1.15",

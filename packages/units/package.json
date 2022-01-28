@@ -1,6 +1,6 @@
 {
   "name": "@nawt/units",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A utility library for CSS unit conversions.",
   "main": "dist/units.cjs.js",
   "module": "dist/units.esm.js",
@@ -36,6 +36,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "@nawt/bundler": "workspace:0.1.1"
+    "@nawt/bundler": "workspace:0.1.2"
   }
 }
