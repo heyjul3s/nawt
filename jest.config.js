@@ -2,6 +2,8 @@ const commonConfig = require('./jest.config.common');
 
 module.exports = {
   ...commonConfig,
+  rootDir: '.',
+  collectCoverage: true,
   collectCoverageFrom: [
     'packages/**/src/*.{js,jsx,ts,tsx}',
     'packages/**/src/**/*.{js,jsx,ts,tsx}',
@@ -13,4 +15,4 @@ module.exports = {
   prettierPath: '<rootDir>/prettier.config.js',
   projects: ['<rootDir>/packages/*/jest.config.js'],
   coverageDirectory: '<rootDir>/coverage/'
-}
+};
