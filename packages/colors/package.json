@@ -1,6 +1,6 @@
 {
   "name": "@nawt/colors",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Various color utilities with color value conversion functions and more",
   "main": "dist/colors.cjs.js",
   "module": "dist/colors.esm.js",
@@ -32,7 +32,7 @@
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "devDependencies": {
-    "@nawt/bundler": "workspace:0.1.2"
+    "@nawt/bundler": "workspace:0.1.3"
   },
   "publishConfig": {
     "access": "public"

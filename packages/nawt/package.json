@@ -1,6 +1,6 @@
 {
   "name": "nawt",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A minimal styled-components UI library",
   "main": "dist/nawt.cjs.js",
   "module": "dist/nawt.esm.js",
@@ -37,14 +37,14 @@
     "access": "public"
   },
   "devDependencies": {
-    "@nawt/block": "workspace:0.1.2",
-    "@nawt/bundler": "workspace:0.1.2",
-    "@nawt/colors": "workspace:0.1.2",
-    "@nawt/flex": "workspace:0.1.2",
-    "@nawt/grid": "workspace:0.1.2",
-    "@nawt/media": "workspace:0.1.2",
-    "@nawt/styled": "workspace:0.1.2",
-    "@nawt/text": "workspace:0.1.2",
-    "@nawt/units": "workspace:0.1.2"
+    "@nawt/block": "workspace:0.1.3",
+    "@nawt/bundler": "workspace:0.1.3",
+    "@nawt/colors": "workspace:0.1.3",
+    "@nawt/flex": "workspace:0.1.3",
+    "@nawt/grid": "workspace:0.1.3",
+    "@nawt/media": "workspace:0.1.3",
+    "@nawt/styled": "workspace:0.1.3",
+    "@nawt/text": "workspace:0.1.3",
+    "@nawt/units": "workspace:0.1.3"
   }
 }
