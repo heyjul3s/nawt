@@ -1,1 +1,1 @@
-export { TextBase, Text } from './Text';
+export { Text } from './Text';

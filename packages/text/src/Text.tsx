@@ -4,7 +4,7 @@ import { styledObject } from '@nawt/styled';
 import type { TStyledObject } from '@nawt/styled';
 import type { TTextProps } from './typings';
 
-export const TextBase: TStyledObject = styledObject('p', {});
+const TextBase: TStyledObject = styledObject('p', {});
 
 export const Text = styled(TextBase)<TTextProps>((props) => {
   const textOverflow = props?.textOverflow || 'ellipsis';
