@@ -10,6 +10,7 @@ const { src, name, dependencies, peerDependencies } = require(path.join(
   'package.json'
 ));
 
+const inputPath = path.join(currentWorkingPath, src);
 const outFileName = name.replace('@nawt/', '');
 const DIR_PATH = path.resolve.bind(null, process.cwd());
 
@@ -19,7 +20,7 @@ const peerDependencyKeys = !!peerDependencies
   : [];
 
 const commonConfig = {
-  entryPoints: ['src/index.ts'],
+  entryPoints: [inputPath],
   bundle: true,
   minify: true,
   external: [...dependencyKeys, ...peerDependencyKeys]
@@ -32,7 +33,8 @@ new Generator({
 
 build({
   ...commonConfig,
-  outfile: `dist/${outFileName}.js`
+  outfile: `dist/${outFileName}.cjs.js`,
+  format: 'cjs'
 });
 
 build({

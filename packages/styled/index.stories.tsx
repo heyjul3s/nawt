@@ -6,9 +6,15 @@ export function styledObjectBasicUsage() {
     display: 'flex'
   });
 
+  const ButtonText = styledObject('p', {
+    color: 'red'
+  });
+
   return (
     <>
-      <Button>hello</Button>
+      <Button>
+        <ButtonText>Hello World</ButtonText>
+      </Button>
     </>
   );
 }

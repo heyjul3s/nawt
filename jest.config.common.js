@@ -1,7 +1,7 @@
 module.exports = {
   transform: {
-    "^.+\\.(js|jsx)$": "babel-jest",
-    "^.+\\.(ts|tsx|js|jsx)$": "ts-jest"
+    '^.+\\.(js|jsx)$': 'babel-jest',
+    '^.+\\.(ts|tsx|js|jsx)$': 'ts-jest'
   },
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
@@ -9,5 +9,5 @@ module.exports = {
   collectCoverage: true,
   coveragePathIgnorePatterns: ['(tests/.*.mock).(jsx?|tsx?)$'],
   verbose: true,
-  testTimeout: 30000,
-}
+  testTimeout: 30000
+};

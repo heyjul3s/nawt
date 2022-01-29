@@ -5,6 +5,6 @@
     "outDir": "dist"
   },
   "references": [{ "path": "../styled/tsconfig.json" }],
-  "include": ["src/*", "__tests/*"],
+  "include": ["src/*"],
   "exclude": ["dist/*"]
 }

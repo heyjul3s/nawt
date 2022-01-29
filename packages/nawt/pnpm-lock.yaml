@@ -1,15 +1,15 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@nawt/block': workspace:0.1.1
-  '@nawt/bundler': workspace:0.1.1
-  '@nawt/colors': workspace:0.1.1
-  '@nawt/flex': workspace:0.1.1
-  '@nawt/grid': workspace:0.1.1
-  '@nawt/media': workspace:0.1.1
-  '@nawt/styled': workspace:0.1.1
-  '@nawt/text': workspace:0.1.1
-  '@nawt/units': workspace:0.1.1
+  '@nawt/block': workspace:0.1.2
+  '@nawt/bundler': workspace:0.1.2
+  '@nawt/colors': workspace:0.1.2
+  '@nawt/flex': workspace:0.1.2
+  '@nawt/grid': workspace:0.1.2
+  '@nawt/media': workspace:0.1.2
+  '@nawt/styled': workspace:0.1.2
+  '@nawt/text': workspace:0.1.2
+  '@nawt/units': workspace:0.1.2
 
 devDependencies:
   '@nawt/block': link:../block

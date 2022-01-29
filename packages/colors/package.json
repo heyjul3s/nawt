@@ -1,8 +1,11 @@
 {
   "name": "@nawt/colors",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Various color utilities with color value conversion functions and more",
-  "main": "src/index.ts",
+  "main": "dist/colors.cjs.js",
+  "module": "dist/colors.esm.js",
+  "types": "dist/index.d.ts",
+  "src": "src/index.ts",
   "keywords": [
     "react",
     "jsx",
@@ -29,12 +32,9 @@
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "devDependencies": {
-    "@nawt/bundler": "workspace:0.1.1"
+    "@nawt/bundler": "workspace:0.1.2"
   },
   "publishConfig": {
-    "access": "public",
-    "main": "dist/colors.js",
-    "module": "dist/colors.esm.js",
-    "typings": "dist/index.d.ts"
+    "access": "public"
   }
 }

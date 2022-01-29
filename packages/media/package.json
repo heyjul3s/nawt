@@ -1,8 +1,11 @@
 {
   "name": "@nawt/media",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A media query utility library with support for newer media feature queries.",
-  "main": "src/index.ts",
+  "main": "dist/media.cjs.js",
+  "module": "dist/media.esm.js",
+  "types": "dist/index.d.ts",
+  "src": "src/index.ts",
   "keywords": [
     "react",
     "jsx",
@@ -31,13 +34,10 @@
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "publishConfig": {
-    "access": "public",
-    "main": "dist/media.js",
-    "module": "dist/media.esm.js",
-    "typings": "dist/index.d.ts"
+    "access": "public"
   },
   "devDependencies": {
-    "@nawt/bundler": "workspace:0.1.1",
+    "@nawt/bundler": "workspace:0.1.2",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "@types/styled-components": "^5.1.15",

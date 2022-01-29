@@ -1,8 +1,11 @@
 {
   "name": "@nawt/block",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Basic generic component block with predefined CSS props",
-  "main": "src/index.ts",
+  "main": "dist/block.cjs.js",
+  "module": "dist/block.esm.js",
+  "types": "dist/index.d.ts",
+  "src": "src/index.tsx",
   "keywords": [
     "react",
     "jsx",
@@ -29,14 +32,11 @@
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "publishConfig": {
-    "access": "public",
-    "main": "dist/grid.js",
-    "module": "dist/grid.esm.js",
-    "typings": "dist/index.d.ts"
+    "access": "public"
   },
   "devDependencies": {
-    "@nawt/bundler": "workspace:0.1.1",
-    "@nawt/styled": "workspace:0.1.1",
+    "@nawt/bundler": "workspace:0.1.2",
+    "@nawt/styled": "workspace:0.1.2",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",
     "csstype": "^3.0.10",

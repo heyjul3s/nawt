@@ -1,4 +1,4 @@
+import styled from 'styled-components';
 import { styledObject } from '@nawt/styled';
-import type { TStyledObject } from '@nawt/styled';
 
-export const Block: TStyledObject = styledObject('div', {});
+export const Block = styled(styledObject('div', {}))``;
