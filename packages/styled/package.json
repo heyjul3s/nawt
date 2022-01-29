@@ -2,7 +2,10 @@
   "name": "@nawt/styled",
   "version": "0.1.1",
   "description": "A small library of styled-components utilities",
-  "main": "src/index.ts",
+  "main": "dist/styled.cjs.js",
+  "module": "dist/styled.esm.js",
+  "types": "dist/index.d.ts",
+  "src": "src/index.ts",
   "keywords": [
     "react",
     "jsx",
@@ -29,10 +32,7 @@
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "publishConfig": {
-    "access": "public",
-    "main": "dist/styled.js",
-    "module": "dist/styled.esm.js",
-    "typings": "dist/index.d.ts"
+    "access": "public"
   },
   "devDependencies": {
     "@nawt/bundler": "workspace:0.1.1",

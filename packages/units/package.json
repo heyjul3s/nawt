@@ -2,7 +2,10 @@
   "name": "@nawt/units",
   "version": "0.1.1",
   "description": "A utility library for CSS unit conversions.",
-  "main": "src/index.ts",
+  "main": "dist/units.cjs.js",
+  "module": "dist/units.esm.js",
+  "types": "dist/index.d.ts",
+  "src": "src/index.ts",
   "keywords": [
     "react",
     "jsx",
@@ -30,10 +33,7 @@
   "author": "Julian Low <hello@heyjul.es>",
   "license": "MIT",
   "publishConfig": {
-    "access": "public",
-    "main": "dist/units.js",
-    "module": "dist/units.esm.js",
-    "typings": "dist/index.d.ts"
+    "access": "public"
   },
   "devDependencies": {
     "@nawt/bundler": "workspace:0.1.1"
