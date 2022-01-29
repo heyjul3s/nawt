@@ -1,6 +1,8 @@
 import styled from 'styled-components';
-import { Block } from '@nawt/block';
+import { styledObject } from '@nawt/styled';
 import css from '@styled-system/css';
+
+import type { TStyledObject } from '@nawt/styled';
 
 type TGridProps = Partial<{
   columnWidth: string | string[];
@@ -8,7 +10,9 @@ type TGridProps = Partial<{
   gap: string | string[];
 }>;
 
-export const Grid = styled(Block)<TGridProps>((props) => {
+const GridBase: TStyledObject = styledObject('div', {});
+
+export const Grid = styled(GridBase)<TGridProps>((props) => {
   const gridTemplateColumns = setGridTemplateColumns(
     props.columnWidth,
     props.columnLength
