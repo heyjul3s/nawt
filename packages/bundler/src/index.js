@@ -22,7 +22,6 @@ const peerDependencyKeys = !!peerDependencies
 const commonConfig = {
   entryPoints: [inputPath],
   bundle: true,
-  minify: true,
   external: [...dependencyKeys, ...peerDependencyKeys]
 };
 
