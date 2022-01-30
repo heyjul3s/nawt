@@ -27,7 +27,7 @@ const commonConfig = {
 };
 
 new Generator({
-  entry: DIR_PATH('src/index.ts'),
+  entry: inputPath || DIR_PATH('src/index.ts'),
   output: DIR_PATH('dist/index.d.ts')
 }).generate();
 
