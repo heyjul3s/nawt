@@ -11,9 +11,8 @@ specifiers:
   '@nawt/text': workspace:0.1.3
   '@nawt/units': workspace:0.1.3
 
-devDependencies:
+dependencies:
   '@nawt/block': link:../block
-  '@nawt/bundler': link:../bundler
   '@nawt/colors': link:../colors
   '@nawt/flex': link:../flex
   '@nawt/grid': link:../grid
@@ -21,3 +20,6 @@ devDependencies:
   '@nawt/styled': link:../styled
   '@nawt/text': link:../text
   '@nawt/units': link:../units
+
+devDependencies:
+  '@nawt/bundler': link:../bundler

@@ -10,13 +10,15 @@ specifiers:
   styled-components: ^5.3.3
   styled-system: ^5.1.5
 
+dependencies:
+  '@styled-system/css': 5.1.5
+  lodash.isempty: 4.4.0
+
 devDependencies:
   '@nawt/bundler': link:../bundler
-  '@styled-system/css': 5.1.5
   '@types/styled-components': 5.1.21
   '@types/styled-system': 5.1.15
   csstype: 3.0.10
-  lodash.isempty: 4.4.0
   styled-components: 5.3.3
   styled-system: 5.1.5
 
@@ -188,7 +190,6 @@ packages:
 
   /@styled-system/css/5.1.5:
     resolution: {integrity: sha512-XkORZdS5kypzcBotAMPBoeckDs9aSZVkvrAlq5K3xP8IMAUek+x2O4NtwoSgkYkWWzVBu6DGdFZLR790QWGG+A==}
-    dev: true
 
   /@styled-system/flexbox/5.1.2:
     resolution: {integrity: sha512-6hHV52+eUk654Y1J2v77B8iLeBNtc+SA3R4necsu2VVinSD7+XY5PCCEzBFaWs42dtOEDIa2lMrgL0YBC01mDQ==}
@@ -385,7 +386,7 @@ packages:
 
   /lodash.isempty/4.4.0:
     resolution: {integrity: sha1-b4bL7di+TsmHvpqvM8loTbGzHn4=}
-    dev: true
+    dev: false
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
