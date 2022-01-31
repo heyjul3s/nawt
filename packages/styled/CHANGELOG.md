@@ -1,5 +1,11 @@
 # @nawt/styled
 
+## 0.1.4
+
+### Patch Changes
+
+- Dependency updates
+
 ## 0.1.3
 
 ### Patch Changes

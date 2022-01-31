@@ -1,6 +1,6 @@
 {
   "name": "@nawt/flex",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Flexbox styled component with capability to define number of columns",
   "main": "dist/flex.cjs.js",
   "module": "dist/flex.esm.js",
@@ -44,11 +44,11 @@
     "styled-components": "^5.3.3"
   },
   "dependencies": {
-    "@nawt/styled": "workspace:0.1.3",
+    "@nawt/styled": "workspace:0.1.4",
     "@styled-system/css": "^5.1.5"
   },
   "devDependencies": {
-    "@nawt/bundler": "workspace:0.1.3",
+    "@nawt/bundler": "workspace:0.1.4",
     "@testing-library/react": "^12.1.2",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
