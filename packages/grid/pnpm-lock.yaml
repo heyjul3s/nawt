@@ -1,8 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@nawt/bundler': workspace:0.1.3
-  '@nawt/styled': workspace:0.1.3
+  '@nawt/bundler': workspace:0.1.4
+  '@nawt/styled': workspace:0.1.4
   '@styled-system/css': ^5.1.5
   '@testing-library/jest-dom': ^5.16.1
   '@testing-library/react': ^12.1.2
