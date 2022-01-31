@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "bundlesize": "bundlesize",
     "lint:es": "eslint --ext .js,.ts,.tsx .",
     "lint:es-fix": "eslint --fix --ext .js,.ts,.tsx .",
     "prettier:fix-all": "pnpm -r --if-present run prettier:fix",
@@ -22,6 +23,10 @@
   "bugs": {
     "url": "https://github.com/heyjul3s/nawt/issues"
   },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/plugin-transform-runtime": "^7.16.10",
@@ -43,6 +48,7 @@
     "@typescript-eslint/parser": "^5.10.1",
     "babel-jest": "^27.4.6",
     "babel-loader": "^8.2.3",
+    "bundlesize": "^0.18.1",
     "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",

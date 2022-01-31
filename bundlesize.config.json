@@ -1,0 +1,31 @@
+{
+  "files": [
+    {
+      "path": "./packages/block/dist/*.js"
+    },
+    {
+      "path": "./packages/colors/dist/*.js"
+    },
+    {
+      "path": "./packages/flex/dist/*.js"
+    },
+    {
+      "path": "./packages/grid/dist/*.js"
+    },
+    {
+      "path": "./packages/media/dist/*.js"
+    },
+    {
+      "path": "./packages/nawt/dist/*.js"
+    },
+    {
+      "path": "./packages/styled/dist/*.js"
+    },
+    {
+      "path": "./packages/text/dist/*.js"
+    },
+    {
+      "path": "./packages/units/dist/*.js"
+    }
+  ]
+}

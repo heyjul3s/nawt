@@ -22,12 +22,11 @@ const peerDependencyKeys = !!peerDependencies
 const commonConfig = {
   entryPoints: [inputPath],
   bundle: true,
-  minify: true,
   external: [...dependencyKeys, ...peerDependencyKeys]
 };
 
 new Generator({
-  entry: DIR_PATH('src/index.ts'),
+  entry: inputPath || DIR_PATH('src/index.ts'),
   output: DIR_PATH('dist/index.d.ts')
 }).generate();
 

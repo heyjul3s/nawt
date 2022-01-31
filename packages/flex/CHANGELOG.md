@@ -1,5 +1,13 @@
 # @nawt/flex
 
+## 0.1.4
+
+### Patch Changes
+
+- Dependency updates
+- Updated dependencies
+  - @nawt/styled@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes
