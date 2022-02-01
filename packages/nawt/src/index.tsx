@@ -4,7 +4,7 @@ export { FlexRow, FlexCol } from '@nawt/flex';
 export { Grid, GridItem } from '@nawt/grid';
 export { mq, mqo, createMq, createMqs } from '@nawt/media';
 export { styledObject, styledSet } from '@nawt/styled';
-export { TextBase, Text } from '@nawt/text';
+export { Text } from '@nawt/text';
 export { pxToEm, pxToRem, emToPx, remToPx } from '@nawt/units';
 
 export type { TFlexColProps, TFlexRowProps } from '@nawt/flex';
