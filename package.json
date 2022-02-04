@@ -4,7 +4,7 @@
     "lint:es": "eslint --ext .js,.ts,.tsx .",
     "lint:es-fix": "eslint --fix --ext .js,.ts,.tsx .",
     "prettier:fix-all": "pnpm -r --if-present run prettier:fix",
-    "test:jest": "jest --passWithNoTests --colors",
+    "test:jest": "jest --colors",
     "test:jest-watch": "jest --watch",
     "test:jest-all": "pnpm -r --if-present run test",
     "test:ci": "jest --ci --reporters='default' --reporters='./github-actions-reporter'",

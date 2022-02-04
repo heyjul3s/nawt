@@ -1,5 +1,11 @@
 # nawt
 
+## 0.1.5
+
+### Patch Changes
+
+- Remove TextBase export
+
 ## 0.1.4
 
 ### Patch Changes
